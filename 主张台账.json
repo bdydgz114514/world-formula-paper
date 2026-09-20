@@ -219,6 +219,36 @@
    "ppt": false,
    "direction": "回溯",
    "grade": "甲级"
+  },
+  {
+   "id": "C23",
+   "stmt": "地原胚质＝一个实体的密合（完全吸收、特性重组、内循环为一）",
+   "paper": "回溯二·五之二",
+   "lecture": false,
+   "ppt": false,
+   "direction": "回溯",
+   "grade": "甲级",
+   "falsify": "若原文表明地原胚质并未抹平内部差别（内循环并非为一）"
+  },
+  {
+   "id": "C24",
+   "stmt": "亥珀波瑞亚后期放弃熔炉转向树妖＝密合不可持续",
+   "paper": "回溯二·五之二",
+   "lecture": false,
+   "ppt": false,
+   "direction": "回溯",
+   "grade": "甲级",
+   "falsify": "若原文表明转向树妖是别的原因（如资源或政治），与「可持续性」无关"
+  },
+  {
+   "id": "C25",
+   "stmt": "循环意味着不产生新的差别（山中之馆样本）",
+   "paper": "回溯二·五之三",
+   "lecture": false,
+   "ppt": false,
+   "direction": "回溯",
+   "grade": "乙级",
+   "falsify": "若原文表明循环中也产生了新的差别"
   }
  ]
 }
