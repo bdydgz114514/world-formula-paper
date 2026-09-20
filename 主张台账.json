@@ -105,14 +105,14 @@
   },
   {
    "id": "C11",
-   "stmt": "地脉是银行不是熔炉",
+   "stmt": "地脉是银行不是熔炉（有账目、有额度、有亏空要补）",
    "paper": "回溯二·六",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
-   "grade": "丙级",
-   "falsify": "若灵魂入地脉即被彻底同化",
-   "status": "动摇中——见附录 D"
+   "grade": "甲级",
+   "falsify": "已结案：原文「填补空缺／明确限制／同等数量」直证；若后续表明地脉会抹除灵魂的个体性则推翻",
+   "status": "已由甲级原文结案"
   },
   {
    "id": "C12",
@@ -199,6 +199,24 @@
    "paper": "补论四·十",
    "lecture": true,
    "ppt": true,
+   "direction": "回溯",
+   "grade": "甲级"
+  },
+  {
+   "id": "C21",
+   "stmt": "意志是灵魂锚定于肉体的东西（原文直证）",
+   "paper": "回溯三·三",
+   "lecture": false,
+   "ppt": false,
+   "direction": "回溯",
+   "grade": "甲级"
+  },
+  {
+   "id": "C22",
+   "stmt": "降临者不适用提瓦特的规则（原文直说）",
+   "paper": "回溯三·五",
+   "lecture": false,
+   "ppt": false,
    "direction": "回溯",
    "grade": "甲级"
   }
