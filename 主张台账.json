@@ -1,5 +1,5 @@
 {
- "_说明": "本台账是『四载体单向流动』闸门的依据。规则：任何出现在讲稿/PPT 里的主张，必须先在论文里存在。direction=预测的才计入理论支持。",
+ "_说明": "本台账是『四载体单向流动』闸门的依据。合订本（第 49 号）分三卷，锚点一律带卷号（如「第一卷 补论四·二」）。direction=预测的才计入理论支持。",
  "_规则": {
   "流动方向": "素材(知识库) → 论文 → 讲稿 → PPT，禁止反向",
   "校验": "node check-flow.mjs",
@@ -9,16 +9,16 @@
   {
    "id": "C01",
    "stmt": "世界式的递推形式 W(n+1)=W(n)⊕W(n−1)，二阶",
-   "paper": "第二章",
+   "paper": "第一卷 第二章",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
-   "grade": "甲级"
+   "grade": "乙级"
   },
   {
    "id": "C02",
    "stmt": "特征方程 r²=r+1，两根为 φ 与 −1/φ",
-   "paper": "补论四·二",
+   "paper": "第一卷 补论四·二",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -27,7 +27,7 @@
   {
    "id": "C03",
    "stmt": "灾难间隔比 r = 1/φ² ≈ 0.382",
-   "paper": "补论四·四",
+   "paper": "第一卷 补论四·四",
    "lecture": true,
    "ppt": true,
    "direction": "预测",
@@ -37,7 +37,7 @@
   {
    "id": "C04",
    "stmt": "下一次大灾难约 73 年后，终末约 427 年后",
-   "paper": "补论四·七",
+   "paper": "第一卷 补论四·七",
    "lecture": true,
    "ppt": true,
    "direction": "预测",
@@ -47,7 +47,7 @@
   {
    "id": "C05",
    "stmt": "「隔绝」不减少 D，「密合」减少 D",
-   "paper": "补论五·二",
+   "paper": "第一卷 补论五·二",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -57,7 +57,7 @@
   {
    "id": "C06",
    "stmt": "自在（自身四象限）与他在（他人四象限）两种存在",
-   "paper": "补论五·十二",
+   "paper": "第一卷 补论五·十二",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -67,7 +67,7 @@
   {
    "id": "C07",
    "stmt": "D 的下降有两条路：密合与毁灭",
-   "paper": "补论四·三",
+   "paper": "第一卷 补论四·三",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -76,7 +76,7 @@
   {
    "id": "C08",
    "stmt": "「规格」＝每个对象的 D 上限，刻写在万物之中",
-   "paper": "回溯一",
+   "paper": "第一卷 回溯一",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -86,7 +86,7 @@
   {
    "id": "C09",
    "stmt": "「归约」＝世界式·反转，数学上是取原像（右逆），有损 δ′<δ",
-   "paper": "回溯二",
+   "paper": "第一卷 回溯二",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -96,7 +96,7 @@
   {
    "id": "C10",
    "stmt": "三档操作：密合 / 归约 / 人格分离",
-   "paper": "回溯二·五",
+   "paper": "第一卷 回溯二·五",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -106,7 +106,7 @@
   {
    "id": "C11",
    "stmt": "地脉是银行不是熔炉（有账目、有额度、有亏空要补）",
-   "paper": "回溯二·六",
+   "paper": "第一卷 回溯二·六",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -117,7 +117,7 @@
   {
    "id": "C12",
    "stmt": "循环由死之执政若娜瓦与夜神维护",
-   "paper": "回溯二·七",
+   "paper": "第一卷 回溯二·七",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -126,7 +126,7 @@
   {
    "id": "C13",
    "stmt": "外源是一个可以空着的位（变量位）",
-   "paper": "回溯三·二",
+   "paper": "第一卷 回溯三·二",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -136,7 +136,7 @@
   {
    "id": "C14",
    "stmt": "意志＝差别度的载体",
-   "paper": "回溯三·三",
+   "paper": "第一卷 回溯三·三",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -146,7 +146,7 @@
   {
    "id": "C15",
    "stmt": "两代降临者两种操作层次（边界/算子 vs 输入值）",
-   "paper": "回溯三·五",
+   "paper": "第一卷 回溯三·五",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -156,7 +156,7 @@
   {
    "id": "C16",
    "stmt": "阿克西妮娅是微缩版的法涅斯",
-   "paper": "回溯三·七",
+   "paper": "第一卷 回溯三·七",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -166,7 +166,7 @@
   {
    "id": "C17",
    "stmt": "「73 年」是变量位继续空着条件下的外推",
-   "paper": "回溯三·八",
+   "paper": "第一卷 回溯三·八",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -176,7 +176,7 @@
   {
    "id": "C18",
    "stmt": "木偶靠自指递归获得人性，是系统内的不可判定点",
-   "paper": "回溯二·五",
+   "paper": "第一卷 回溯二·五",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -186,7 +186,7 @@
   {
    "id": "C19",
    "stmt": "若娜瓦的定义句「确保死亡的发生」＝保证 D 单调下降",
-   "paper": "回溯二·七",
+   "paper": "第一卷 回溯二·七",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -196,7 +196,7 @@
   {
    "id": "C20",
    "stmt": "拟合好不等于机制对（n=2 时几乎任何模型都能拟合）",
-   "paper": "补论四·十",
+   "paper": "第一卷 补论四·十",
    "lecture": true,
    "ppt": true,
    "direction": "回溯",
@@ -205,7 +205,7 @@
   {
    "id": "C21",
    "stmt": "意志是灵魂锚定于肉体的东西（原文直证）",
-   "paper": "回溯三·三",
+   "paper": "第一卷 回溯三·三",
    "lecture": false,
    "ppt": false,
    "direction": "回溯",
@@ -214,7 +214,7 @@
   {
    "id": "C22",
    "stmt": "降临者不适用提瓦特的规则（原文直说）",
-   "paper": "回溯三·五",
+   "paper": "第一卷 回溯三·五",
    "lecture": false,
    "ppt": false,
    "direction": "回溯",
@@ -223,7 +223,7 @@
   {
    "id": "C23",
    "stmt": "地原胚质＝一个实体的密合（完全吸收、特性重组、内循环为一）",
-   "paper": "回溯二·五之二",
+   "paper": "第一卷 回溯二·五之二",
    "lecture": false,
    "ppt": false,
    "direction": "回溯",
@@ -233,7 +233,7 @@
   {
    "id": "C24",
    "stmt": "亥珀波瑞亚后期放弃熔炉转向树妖＝密合不可持续",
-   "paper": "回溯二·五之二",
+   "paper": "第一卷 回溯二·五之二",
    "lecture": false,
    "ppt": false,
    "direction": "回溯",
@@ -243,7 +243,7 @@
   {
    "id": "C25",
    "stmt": "循环意味着不产生新的差别（山中之馆样本）",
-   "paper": "回溯二·五之三",
+   "paper": "第一卷 回溯二·五之三",
    "lecture": false,
    "ppt": false,
    "direction": "回溯",
@@ -253,7 +253,7 @@
   {
    "id": "C26",
    "stmt": "记忆项假说：引力的问题是在重正化群的递推里缺了一项（升为二阶可得第二族解）",
-   "paper": "第五章",
+   "paper": "第二卷 第五章",
    "lecture": true,
    "ppt": false,
    "direction": "回溯",
@@ -263,7 +263,7 @@
   {
    "id": "C27",
    "stmt": "四条主流统一路线在数学上都在补回同一个缺失项（事后的归类，不是物理结论）",
-   "paper": "第四章",
+   "paper": "第二卷 第四章",
    "lecture": true,
    "ppt": false,
    "direction": "回溯",
@@ -273,7 +273,7 @@
   {
    "id": "C28",
    "stmt": "差别度 D 可能与物理里的「可重正化程度」是同一个量",
-   "paper": "第六章",
+   "paper": "第二卷 第六章",
    "lecture": true,
    "ppt": false,
    "direction": "回溯",
@@ -282,7 +282,7 @@
   {
    "id": "C29",
    "stmt": "规格（D 的上限）对应物理里的紫外截断 Λ",
-   "paper": "第七章",
+   "paper": "第二卷 第七章",
    "lecture": true,
    "ppt": false,
    "direction": "回溯",
@@ -292,11 +292,12 @@
   {
    "id": "C30",
    "stmt": "标准模型三条耦合线在高能标处「几乎」交汇但不完全交汇",
-   "paper": "第二章",
+   "paper": "第二卷 第二章",
    "lecture": true,
    "ppt": false,
    "direction": "回溯",
    "grade": "甲级"
   }
- ]
+ ],
+ "_等级口径": "等级以正文 8.1 的分级为基准；正文未列出的条目（补论与回溯里的独立主张、第二卷的主张）由本院在台账内单独给出。"
 }

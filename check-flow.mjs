@@ -17,8 +17,10 @@ const HERE = path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z
 const rd = (p) => fs.readFileSync(path.join(HERE, p), "utf8");
 const has = (p) => fs.existsSync(path.join(HERE, p));
 
-const PAPERS   = ["世界式论文.md", "大一统理论纲要.md"];
-const LECTURES = ["讲稿-总集.md", "lecture2/讲稿.md", "lecture/讲稿.md"];
+// 合订本（第 49 号）是当前的主论文；两份原件作为档案仍在语料里
+const MERGED    = "世界式与大一统-合订本.md";
+const PAPERS    = [MERGED, "世界式论文.md", "大一统理论纲要.md"];
+const LECTURES  = ["讲稿-合订本.md", "讲稿-总集.md", "lecture2/讲稿.md", "lecture/讲稿.md"];
 const OOC      = ["玩家", "游戏内", "官方", "策划", "实装"];
 
 // 人工复核过的「不是术语」的讲稿用语（每次新增都要在这里写一句理由）
@@ -33,10 +35,27 @@ const soft = (s) => { console.log("  ⚠ " + s); warn++; };
 // ---------- 1. 主张台账 ----------
 const reg = JSON.parse(rd("主张台账.json"));
 const paperText = PAPERS.filter(has).map(rd).join("\n");
-const heads = PAPERS.filter(has).flatMap((f) => [...rd(f).matchAll(/^## (.+)$/gm)].map((m) => m[1]));
+// 合订本分三卷，卷内章节号会重复（每卷都有自己的「第五章」）——
+// 所以锚点要带卷号匹配：台账写「第二卷 第五章」时，只在第二卷里找。
+const mergedHeads = (() => {
+  if (!has(MERGED)) return [];
+  let vol = "";
+  const out = [];
+  for (const L of rd(MERGED).split(/\r?\n/)) {
+    const h1 = L.match(/^#\s+(第[一二三]卷.*)$/);
+    if (h1) { vol = h1[1].trim(); continue; }
+    const h2 = L.match(/^##\s+(.+)$/);
+    if (h2) out.push({ vol, head: h2[1].trim() });
+  }
+  return out;
+})();
+const oldHeads = PAPERS.filter((f) => f !== MERGED && has(f)).flatMap((f) => [...rd(f).matchAll(/^## (.+)$/gm)].map((m) => m[1]));
 const secExists = (a) => {
-  const base = a.split("·")[0].trim();
-  return heads.some((h) => h.startsWith(base));
+  const m = a.match(/^(第[一二三]卷)\s*(.*)$/);
+  const scope = m ? m[1] : null;
+  const base = (m ? m[2] : a).split("·")[0].trim();
+  if (scope) return mergedHeads.some((x) => x.vol.startsWith(scope) && x.head.startsWith(base));
+  return mergedHeads.some((x) => x.head.startsWith(base)) || oldHeads.some((h) => h.startsWith(base));
 };
 console.log("=== 逐条校验 " + reg.claims.length + " 条主张 ===");
 for (const c of reg.claims) {
