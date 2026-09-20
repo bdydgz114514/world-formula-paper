@@ -1,0 +1,206 @@
+{
+ "_说明": "本台账是『四载体单向流动』闸门的依据。规则：任何出现在讲稿/PPT 里的主张，必须先在论文里存在。direction=预测的才计入理论支持。",
+ "_规则": {
+  "流动方向": "素材(知识库) → 论文 → 讲稿 → PPT，禁止反向",
+  "校验": "node check-flow.mjs",
+  "违规": "某主张 lecture=true 而 paper=false 时判为违规"
+ },
+ "claims": [
+  {
+   "id": "C01",
+   "stmt": "世界式的递推形式 W(n+1)=W(n)⊕W(n−1)，二阶",
+   "paper": "第二章",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "甲级"
+  },
+  {
+   "id": "C02",
+   "stmt": "特征方程 r²=r+1，两根为 φ 与 −1/φ",
+   "paper": "补论四·二",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "甲级"
+  },
+  {
+   "id": "C03",
+   "stmt": "灾难间隔比 r = 1/φ² ≈ 0.382",
+   "paper": "补论四·四",
+   "lecture": true,
+   "ppt": true,
+   "direction": "预测",
+   "grade": "丙级",
+   "falsify": "若观察到的相邻灾难间隔比显著偏离 0.382"
+  },
+  {
+   "id": "C04",
+   "stmt": "下一次大灾难约 73 年后，终末约 427 年后",
+   "paper": "补论四·七",
+   "lecture": true,
+   "ppt": true,
+   "direction": "预测",
+   "grade": "丙级",
+   "falsify": "200 年内无大灾难则模型被推翻"
+  },
+  {
+   "id": "C05",
+   "stmt": "「隔绝」不减少 D，「密合」减少 D",
+   "paper": "补论五·二",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "乙级",
+   "falsify": "若发现「隔绝」也在减少 D（例如被蛋壳隔开的区域内部差别度确实在下降），则两栏区分作废"
+  },
+  {
+   "id": "C06",
+   "stmt": "自在（自身四象限）与他在（他人四象限）两种存在",
+   "paper": "补论五·十二",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "乙级",
+   "falsify": "若被密合者仍能以本人身份返回"
+  },
+  {
+   "id": "C07",
+   "stmt": "D 的下降有两条路：密合与毁灭",
+   "paper": "补论四·三",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "甲级"
+  },
+  {
+   "id": "C08",
+   "stmt": "「规格」＝每个对象的 D 上限，刻写在万物之中",
+   "paper": "回溯一",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "乙级",
+   "falsify": "若无外源也能无限增长而不崩"
+  },
+  {
+   "id": "C09",
+   "stmt": "「归约」＝世界式·反转，数学上是取原像（右逆），有损 δ′<δ",
+   "paper": "回溯二",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "乙级",
+   "falsify": "若归约被证明无损"
+  },
+  {
+   "id": "C10",
+   "stmt": "三档操作：密合 / 归约 / 人格分离",
+   "paper": "回溯二·五",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "丙级",
+   "falsify": "若原文材料显示「人格分离」其实是密合或归约的子类、而非独立一档"
+  },
+  {
+   "id": "C11",
+   "stmt": "地脉是银行不是熔炉",
+   "paper": "回溯二·六",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "丙级",
+   "falsify": "若灵魂入地脉即被彻底同化",
+   "status": "动摇中——见附录 D"
+  },
+  {
+   "id": "C12",
+   "stmt": "循环由死之执政若娜瓦与夜神维护",
+   "paper": "回溯二·七",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "甲级"
+  },
+  {
+   "id": "C13",
+   "stmt": "外源是一个可以空着的位（变量位）",
+   "paper": "回溯三·二",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "丙级",
+   "falsify": "若封闭系统能自增 D"
+  },
+  {
+   "id": "C14",
+   "stmt": "意志＝差别度的载体",
+   "paper": "回溯三·三",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "乙级",
+   "falsify": "若原文显示意志与可区分事物的总量无关（例如意志极大者到场后 D 并未增加）"
+  },
+  {
+   "id": "C15",
+   "stmt": "两代降临者两种操作层次（边界/算子 vs 输入值）",
+   "paper": "回溯三·五",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "乙级",
+   "falsify": "若原文显示第一降临者也曾修改输入值，或第四降临者动过方程本身"
+  },
+  {
+   "id": "C16",
+   "stmt": "阿克西妮娅是微缩版的法涅斯",
+   "paper": "回溯三·七",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "丙级",
+   "falsify": "若阿克西妮娅的设计被证明不是「合并同类」而是别的机制（例如单纯的信息封锁）"
+  },
+  {
+   "id": "C17",
+   "stmt": "「73 年」是变量位继续空着条件下的外推",
+   "paper": "回溯三·八",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "丙级",
+   "falsify": "若在变量位仍空着的情况下灾难节奏并未按 0.382 收缩"
+  },
+  {
+   "id": "C18",
+   "stmt": "木偶靠自指递归获得人性，是系统内的不可判定点",
+   "paper": "回溯二·五",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "乙级",
+   "falsify": "若桑多涅被证明并非自指递归结构（例如她的人格来自外部注入而非自我记录）"
+  },
+  {
+   "id": "C19",
+   "stmt": "若娜瓦的定义句「确保死亡的发生」＝保证 D 单调下降",
+   "paper": "回溯二·七",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "乙级",
+   "falsify": "若发现存在不导致 D 下降的死亡形式，或存在不需要「确保死亡发生」也能维持 D 的机制"
+  },
+  {
+   "id": "C20",
+   "stmt": "拟合好不等于机制对（n=2 时几乎任何模型都能拟合）",
+   "paper": "补论四·十",
+   "lecture": true,
+   "ppt": true,
+   "direction": "回溯",
+   "grade": "甲级"
+  }
+ ]
+}
