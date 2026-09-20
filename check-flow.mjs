@@ -25,7 +25,11 @@ const OOC      = ["玩家", "游戏内", "官方", "策划", "实装"];
 
 // 人工复核过的「不是术语」的讲稿用语（每次新增都要在这里写一句理由）
 const WHITELIST = new Set([
-  // 例： "我引入一个量" —— 纯叙述
+  // 人工复核过：讲稿的说法与论文同义，只是换了写法或用了中文数字
+  "谁决定谁",     // 讲稿里是「第三步问『谁决定谁』」这种步骤描述
+  "约两万",       // 论文写「约 2 万」（阿拉伯数字）
+  "整体乙级",     // 讲稿对某案例整条结论的等级说法
+  "全部回溯",     // 论文写「二十条全部是回溯」，讲稿表格里作「全部回溯」
 ]);
 
 let fail = 0, warn = 0;
@@ -150,13 +154,18 @@ for (const f of LECTURES) {
     if (m) pages.push({ n: +m[1], title: m[2].trim(), line: i + 1 });
   });
   if (!pages.length) { soft(f + "：没有解析到「第 N 页」标题"); continue; }
-  const dupT = {}, titleSeen = {};
+  const dupT = {}, titleSeen = {}, titleCount = {};
   let gap = 0;
   pages.forEach((p, k) => {
     if (p.n !== k + 1) { console.log("  ✘ " + f + " 页码不连续：第 " + (k + 1) + " 个标题是「第 " + p.n + " 页」（" + p.line + " 行）"); gap++; fail++; }
-    if (p.title && titleSeen[p.title]) { console.log("  ✘ " + f + " 第 " + p.n + " 页标题「" + p.title + "」与第 " + titleSeen[p.title] + " 页重复"); gap++; fail++; }
+    // 标题重复在讲稿里可能是**有意**的（例如每篇补论都以「这一篇不能证明什么」收尾），
+    // 所以只报警告，并把每一处列出来供人工确认。
+    if (p.title) { (titleCount[p.title] = titleCount[p.title] || []).push(p.n); }
     if (p.title) titleSeen[p.title] = p.n;
   });
+  const repeats = Object.entries(titleCount).filter(([, v]) => v.length > 1);
+  if (repeats.length) console.log("  ⚠ " + f + " 有 " + repeats.length + " 个标题在多页重复（先确认是不是有意的）：" +
+    repeats.slice(0, 6).map(([k, v]) => "「" + k + "」×" + v.length + "（页 " + v.slice(0, 6).join(",") + "）").join("；"));
   // 正文里的交叉引用
   const N = pages.length;
   const byN = new Map(pages.map((p) => [p.n, p.title]));
