@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>世界式：原理、推理与应用</title>
+<style>
+:root{--navy:#16324F;--teal:#2A9D8F;--gold:#C9A227;--grey:#5C6B73}
+*{box-sizing:border-box}
+body{margin:0;background:#F7FAFC;color:#1B2A33;font-family:'Microsoft YaHei','PingFang SC',system-ui,sans-serif;line-height:1.95;font-size:16.5px}
+.wrap{max-width:900px;margin:0 auto;padding:56px 30px 120px;background:#fff;box-shadow:0 0 40px rgba(22,50,79,.08)}
+h1{font-size:31px;color:var(--navy);line-height:1.45;margin:0 0 6px;letter-spacing:.5px}
+h2{font-size:23px;color:var(--navy);margin:56px 0 16px;padding-bottom:9px;border-bottom:2px solid #E3EBF0}
+h3{font-size:18.5px;color:var(--teal);margin:34px 0 12px}
+h4{font-size:16.5px;color:var(--grey);margin:24px 0 10px}
+p{margin:13px 0}
+strong{color:var(--navy)}
+blockquote{margin:18px 0;padding:12px 20px;background:#F2F8FA;border-left:4px solid var(--teal);color:#22343F}
+blockquote p{margin:6px 0}
+table{border-collapse:collapse;width:100%;margin:20px 0;font-size:14.6px}
+th{background:var(--navy);color:#fff;text-align:left;padding:9px 11px;font-weight:600}
+td{padding:8px 11px;border-bottom:1px solid #E6EDF1;vertical-align:top}
+tr:nth-child(even) td{background:#FAFCFD}
+figure{margin:26px 0;text-align:center}
+figure img{max-width:100%;border:1px solid #E3EBF0;border-radius:7px;background:#fff}
+.cap{text-align:center;color:var(--grey);font-size:13.6px;margin:-12px 0 26px}
+hr{border:none;border-top:1px solid #E3EBF0;margin:44px 0}
+ul,ol{margin:12px 0;padding-left:26px} li{margin:7px 0}
+.meta{background:linear-gradient(135deg,#16324F,#2A6E8F);color:#DCEAF2;padding:24px 30px;border-radius:10px;margin:24px 0 34px;font-size:14.6px;line-height:1.9}
+.meta strong{color:#fff}
+.miss{color:#A63A50}
+@media print{body{background:#fff}.wrap{box-shadow:none;max-width:none}h2{page-break-after:avoid}figure{page-break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1 id="se5a4a7e4b880e7bb">大一统理论纲要</h1>
+<h3 id="se28094e28094e69e">——枫丹科学院非常规现象研究室 内部研究纪要 第 48 号</h3>
+<hr>
+<h2 id="se4bd9ce88085e4b8">作者与体例</h2>
+<p>本纪要是第 47 号《世界式：原理、推理与应用》的<strong>姊妹篇</strong>。</p>
+<p class="cap"><em>第 47 号研究的是一台算式。本纪要研究的是另一个问题：物理学为什么至今没有统一。</em></p>
+<p>而本院在写第 47 号的过程中逐渐意识到一件事：<strong>这两个问题可能是同一个问题。</strong></p>
+<h3 id="se4bd93e4be8be7ba">体例约定</h3>
+<p>与本纪要的姊妹篇一致：</p>
+<ul><li><strong>凡引用原文，一律加引号并注明出处。</strong></li><li><strong>凡本院自己的推断，一律标明它是推断。</strong></li><li><strong>每一条结论都标两个轴：方向（预测／回溯）与等级（甲／乙／丙）。</strong></li><li><strong>每一条结论都要回答：什么情况下它会被推翻。</strong></li></ul>
+<p class="cap"><em>关于「回溯」这个标记<strong>：本院先读到材料、后接上框架，这叫回溯。</strong>回溯能改变的是强度，不是方向。</em></p>
+<p><strong>本院在此先说清楚一件事：本纪要比第 47 号更容易犯一个错误。</strong>第 47 号研究的是提瓦特，而提瓦特是有原文的；<strong>本纪要研究的是真实物理，而真实物理有实验。</strong>这意味着本纪要的每一条主张，<strong>都必须面对一个第 47 号不需要面对的问题</strong>：</p>
+<p>　　　<strong>它能不能被算出来？</strong></p>
+<p class="cap"><em>本院把这条写在最前面，是因为本院知道这份纪要里有一大半内容是推演，而不是计算。</em></p>
+<hr>
+<h2 id="se9a298e8aeb0">题记</h2>
+<blockquote><p><strong>「我们不是缺一个把引力算进去的公式。我们缺的是，一个能让我们把引力算进去的地方。」</strong></p></blockquote>
+<hr>
+<h2 id="se69198e8a681">摘要</h2>
+<p class="cap"><em>统一理论的核心困难，通常被表述为「引力不可重正化」。本纪要主张：这个表述描述了症状，而没有说出病因。</em></p>
+<p>本纪要提出一个替换的说法：</p>
+<p>　　　<strong>引力的问题，是它在重正化群的递推里缺了一项。</strong></p>
+<p>重正化群方程 `dg/d ln μ = β(g)` 是一台<strong>一阶递推机</strong>。一阶递推的解由单个不动点主导，<strong>它没有记忆</strong>。</p>
+<p>而第 47 号研究的那台算式 `W(n+1) = W(n) ⊕ W(n−1)` 是一台<strong>二阶递推机</strong>。二阶递推的特征方程有两族解。<strong>多出来的那一项，本文称之为记忆项。</strong></p>
+<p class="cap"><em>本纪要的主张是：四条主流的统一路线（弦论、圈量子引力、渐近安全、因果动力学三角剖分），虽然做法迥异，但它们在数学上都在做同一件事——把那个缺失的项补回去。</em></p>
+<p class="cap"><em>而本纪要的第二个主张更弱，也更需要读者警惕：</em></p>
+<p>　　　<strong>第 47 号的「差别度」，可能与物理学里的「可重正化程度」是同一个量。</strong></p>
+<p class="cap"><em>这一条本院只给丙级。<strong>它目前没有计算支持，只有形状上的对应。</strong>本院把它写出来，是因为它值得被检验；本院把它标为丙级，是因为它还不配被称为结论。</em></p>
+<hr>
+<h2 id="se79baee5bd95">目录</h2>
+<ul><li>第零章　缘起：两个式子长得有点像</li><li>第一章　预备：递推的阶</li><li>第二章　标准模型：一台一阶递推机的胜利</li><li>第三章　引力的麻烦：一个量纲问题</li><li>第四章　四条路线，一个形状</li><li>第五章　本文的主张：补上那一项</li><li>第六章　差别度是什么物理量</li><li>第七章　把它套到提瓦特</li><li>第八章　两个理论互相解释</li><li>第九章　反例、边界与待证</li><li>附录 A　术语对照</li><li>附录 B　本纪要的已知错误与修正记录</li><li>后记</li></ul>
+<hr>
+<h2 id="se7acace99bb6e7ab">第零章　缘起：两个式子长得有点像</h2>
+<h3 id="s302e3120e58588e6">0.1 先把两个式子摆出来</h3>
+<p class="cap"><em>第一个式子，来自量子场论。</em></p>
+<p>一个耦合常数 `g` 随着能标 `μ` 变化，它的变化率由 <strong>β 函数</strong>给出：</p>
+<blockquote><p>`dg / d ln μ = β(g)`</p></blockquote>
+<p><strong>这是一个微分方程。但把它离散化，它就是一台递推机</strong>：</p>
+<blockquote><p>`g(n+1) = g(n) + ε · β(g(n))`</p></blockquote>
+<p><strong>给它一个初值，它就能一路算下去。</strong>这就是重正化群（RG）的运作方式。</p>
+<p class="cap"><em>第二个式子，来自第 47 号。</em></p>
+<blockquote><p>`W(n+1) = W(n) ⊕ W(n−1)`</p></blockquote>
+<p class="cap"><em>本院第一次把这两个式子并排写下来的时候，注意到的不是它们的相似，而是它们的一个差别。</em></p>
+<p class="cap"><em>第一个式子，右边只有 `g(n)`。</em></p>
+<p class="cap"><em>第二个式子，右边有 `W(n)` 和 `W(n−1)`。</em></p>
+<h3 id="s302e3220e8bf99e4">0.2 这个差别叫什么</h3>
+<p class="cap"><em>在数学上，这个差别有一个名字：阶。</em></p>
+<ul><li>`g(n+1) = g(n) + ε·β(g(n))` 是<strong>一阶递推</strong>——下一步只依赖当前步。</li><li>`W(n+1) = W(n) ⊕ W(n−1)` 是<strong>二阶递推</strong>——下一步依赖当前步和前一步。</li></ul>
+<p class="cap"><em>而阶数不是一个小差别。</em></p>
+<p>本院在第 47 号第一章里讲过：<strong>二阶递推的特征方程是一个二次方程，它有两个根。</strong>而一阶递推的特征方程是一次方程，<strong>它只有一个根。</strong></p>
+<p>　　　<strong>一阶递推没有「另一族解」。二阶递推有。</strong></p>
+<h3 id="s302e3320e69cace7">0.3 本纪要要问的问题</h3>
+<p class="cap"><em>如果引力的麻烦，恰好来自「重正化群是一阶的」呢？</em></p>
+<p><strong>这是一个本院无法立刻回答的问题。</strong>但本院注意到一件事：<strong>如果这个猜想成立，那么它应该有一个可以观察的后果</strong>——</p>
+<p>　　　<strong>任何把重正化群升成二阶的努力，都应该同时改善引力的行为。</strong></p>
+<p>而本纪要在第四章会说明：<strong>四条主流路线，做的正是这件事。</strong></p>
+<h3 id="s302e3420e69cace8">0.4 本节的边界</h3>
+<p class="cap"><em>本院必须在这里就说明一件事：本章提出的只是一个形状上的相似，不是一个推导。</em></p>
+<p>本院没有从量子场论推出第 47 号的算式，<strong>也没有从第 47 号的算式推出量子场论。</strong></p>
+<p>　　　<strong>本院做的只是：把两个式子并排放在一起，然后指出它们差了一阶。</strong></p>
+<p class="cap"><em>这个观察本身是廉价的。<strong>它有价值与否，取决于它能不能在后面的章节里长出可检验的东西。</strong>如果长不出来，那么本章就该被删掉。</em></p>
+<hr>
+<h2 id="se7acace4b880e7ab">第一章　预备：递推的阶</h2>
+<h3 id="s312e3120e4b880e5">1.1 一台递推机需要什么</h3>
+<p class="cap"><em>一台递推机需要三样东西：</em></p>
+<table><thead><tr><th>要素</th><th>作用</th></tr></thead><tbody><tr><td><strong>状态</strong></td><td>它现在是什么</td></tr><tr><td><strong>转移规则</strong></td><td>从现在的状态怎么走到下一个</td></tr><tr><td><strong>初值</strong></td><td>从哪里开始</td></tr></tbody></table>
+<p class="cap"><em>而「阶」描述的是转移规则要看几步历史。</em></p>
+<h3 id="s312e3220e4b880e9">1.2 一阶递推：没有记忆的机器</h3>
+<blockquote><p>`x(n+1) = f(x(n))`</p></blockquote>
+<p class="cap"><em>一阶递推有一个决定性的性质：它的未来只由现在决定，与过去无关。</em></p>
+<p>　　　<strong>换言之：它没有记忆。</strong></p>
+<p class="cap"><em>这不是一个缺陷——对很多系统来说，这正是我们要的性质。<strong>放射性衰变、牛顿冷却、RC 电路放电，</strong>它们都是（或近似是）一阶的，而它们也确实「不记得」自己之前走过什么路。</em></p>
+<p><strong>在重正化群里，这个「没有记忆」的性质表现为一件事</strong>：</p>
+<p>　　　<strong>给定能标 μ 处的耦合 g，更高能标处的行为就完全确定了，与它从哪来无关。</strong></p>
+<p class="cap"><em>这是重正化群最有力的性质之一，也是「普适性」的来源。</em></p>
+<h3 id="s312e3320e4ba8ce9">1.3 二阶递推：多出来的那一项</h3>
+<blockquote><p>`x(n+1) = f(x(n), x(n−1))`</p></blockquote>
+<p><strong>二阶递推需要两个初值才能启动。</strong>而一旦启动，<strong>它看起来与一阶递推没什么区别</strong>——直到你看它的不动点结构。</p>
+<h3 id="s312e3420e7babfe6">1.4 线性情形：从特征方程看两族解</h3>
+<p class="cap"><em>设 `x(n+1) = a·x(n) + b·x(n−1)`。令 `x(n) = rⁿ`，得特征方程：</em></p>
+<blockquote><p>`r² = a·r + b`</p></blockquote>
+<p class="cap"><em>这是一个二次方程，有两个根 `r₁` 与 `r₂`。通解是：</em></p>
+<blockquote><p>`x(n) = A·r₁ⁿ + B·r₂ⁿ`</p></blockquote>
+<p class="cap"><em>而一阶递推 `x(n+1) = a·x(n)` 的特征方程是 `r = a`，只有一个根，通解是 `x(n) = A·aⁿ`。</em></p>
+<table><thead><tr><th></th><th>一阶</th><th>二阶</th></tr></thead><tbody><tr><td>特征方程</td><td>一次</td><td><strong>二次</strong></td></tr><tr><td>根的个数</td><td>1</td><td><strong>2</strong></td></tr><tr><td>通解</td><td>一族</td><td><strong>两族之和</strong></td></tr><tr><td>初值个数</td><td>1</td><td><strong>2</strong></td></tr></tbody></table>
+<p class="cap"><em>两族解意味着二阶系统可以同时携带两种行为。<strong>第 47 号里那个式子的两个根是 `φ ≈ 1.618` 与 `−1/φ ≈ −0.618`，而</strong>负根带来的交替行为，正是一阶系统不可能有的。</em></p>
+<h3 id="s312e3520e4b880e4">1.5 一个具体的例子：为什么二阶能震荡而一阶不能</h3>
+<p class="cap"><em>一阶递推 `x(n+1) = a·x(n)` 永不变号<strong>（若 `a&gt;0`）</strong>或每步都变号<strong>（若 `a&lt;0`）。</strong>它没有「振荡」这一档。</em></p>
+<p><strong>二阶递推可以。</strong>当特征方程的判别式为负时，`r₁` 与 `r₂` 是一对共轭复数，通解变成阻尼振荡。</p>
+<p>　　　<strong>这就是为什么「二阶」在物理里到处都是</strong>：牛顿第二定律 `F = ma` 里有一个二阶导；波动方程是二阶的；<strong>只有二阶系统才能既衰减又振荡。</strong></p>
+<h3 id="s312e3620e69cace8">1.6 本节的边界</h3>
+<p class="cap"><em>本节是纯数学，没有物理主张。</em></p>
+<p class="cap"><em>本院把这一节放在最前面，是为了让后面的主张有一个不依赖提瓦特的落脚点。<strong>如果第五章的主张出了问题，</strong>问题会出在它的物理部分，而不是这一节。</em></p>
+<hr>
+<h2 id="se7acace4ba8ce7ab">第二章　标准模型：一台一阶递推机的胜利</h2>
+<h3 id="s322e3120e5ae83e7">2.1 它统一了什么</h3>
+<p class="cap"><em>标准模型把四种相互作用里的三种——电磁、弱、强——写成了一个理论。</em></p>
+<p class="cap"><em>它的做法，用本纪要的语言说，是：</em></p>
+<p>　　　<strong>发现这三种力在高能标下其实是同一种力。</strong></p>
+<p class="cap"><em>这个「发现」不是一个瞬间的洞见，而是一台递推机的输出<strong>：把三种耦合常数分别沿能标往上跑，</strong>它们会靠近。</em></p>
+<h3 id="s322e3220e5ae83e4">2.2 它们「几乎」交汇</h3>
+<p class="cap"><em>这是粒子物理里最有名的一张图。</em></p>
+<p>把电磁耦合、弱耦合、强耦合的对数倒数分别画在能标轴上，<strong>三条线在 10¹⁵～10¹⁶ GeV 附近靠近，但没有交于一点。</strong></p>
+<p class="cap"><em>「几乎交汇」这四个字，是本章的核心。</em></p>
+<h3 id="s322e3320e4b8bae4">2.3 为什么是「几乎」</h3>
+<p class="cap"><em>在纯标准模型里，三条线不交汇。</em></p>
+<p class="cap"><em>而如果加上超对称——也就是假设每个已知粒子都有一个超对称伙伴——它们会交汇得漂亮得多。</em></p>
+<p>　　　<strong>这就是超对称最有力的动机之一。</strong></p>
+<p class="cap"><em>但本院要在这里指出一件常被跳过的事：</em></p>
+<p>　　　<strong>「加上超对称就交汇了」这句话，是一个回溯，不是一个预测。</strong></p>
+<p class="cap"><em>理由是<strong>：超对称是在「三线不交汇」这个观测之后被引进来修这个问题的。</strong>它解释了一个已有的事实，而没有事先说中它。</em></p>
+<p class="cap"><em>而超对称本身做出的那些真正的预测——比如超对称粒子的质量——至今没有被找到。</em></p>
+<h3 id="s322e3420e69cace7">2.4 本章的结论</h3>
+<p class="cap"><em>本院在本章要说的只有一件事：</em></p>
+<p>　　　<strong>标准模型是一台一阶递推机的成功。</strong></p>
+<p class="cap"><em>它的成功方式是：找到正确的变量（耦合常数），让递推在正确的方向上跑，然后看它会跑到哪里。</em></p>
+<p><strong>而它的边界也是这个「一阶」带来的</strong>：</p>
+<p>　　　<strong>一阶递推没有记忆项，因此它没有地方安放引力。</strong></p>
+<p class="cap"><em>这句话现在还是一个类比。第三章会说明它为什么可能不只是类比。</em></p>
+<hr>
+<h2 id="se7acace4b889e7ab">第三章　引力的麻烦：一个量纲问题</h2>
+<h3 id="s332e3120e58588e6">3.1 先把「不可重正化」翻译成人话</h3>
+<p class="cap"><em>「引力不可重正化」这句话，在教科书里通常是这样出现的：</em></p>
+<blockquote><p>广义相对论的作用量里，爱因斯坦-希尔伯特项是 `∫ d⁴x √(−g) R`。<strong>把度规在平直背景上展开 `g = η + h`，得到 `h` 的高阶项，而每一项都带着牛顿常数 `G` 的幂。</strong></p><p></p><p><strong>而 `G` 的量纲是长度的平方</strong>——也就是说，<strong>它是一个带负量纲的耦合常数。</strong></p></blockquote>
+<p class="cap"><em>负量纲的耦合常数意味着什么？</em></p>
+<p class="cap"><em>意味着：当你把能标往上推时，圈图修正会带来越来越多的 `G·E²` 因子，而这些因子不收敛。</em></p>
+<p>　　　<strong>用一句更朴素的话说：引力每往高能走一步，账就多欠一笔，而且欠得越来越快。</strong></p>
+<h3 id="s332e3220e4b880e4">3.2 一个类比：把这件事想成一笔贷款</h3>
+<p class="cap"><em>本院在这里用一个类比，请读者注意它是类比。</em></p>
+<p class="cap"><em>设想有两笔债：</em></p>
+<table><thead><tr><th></th><th>第一笔</th><th>第二笔</th></tr></thead><tbody><tr><td>本金</td><td>每一期<strong>还掉一部分</strong></td><td>每一期<strong>只还利息</strong></td></tr><tr><td>结果</td><td>越还越少，最终还清</td><td><strong>本金永远在，利息还在涨</strong></td></tr><tr><td>对应</td><td><strong>可重正化的耦合</strong></td><td><strong>不可重正化的耦合</strong></td></tr></tbody></table>
+<p><strong>可重正化的耦合，像一个每期都在还本金的贷款</strong>——你算得越细，它的有效值变化是可控的。</p>
+<p class="cap"><em>而牛顿常数像一个只还利息的贷款<strong>：</strong>你每提高一档精度，就要多借一笔新的钱来堵上一笔的窟窿，而每笔新钱都更大。</em></p>
+<p>　　　<strong>这类贷款有一个共同点：它不会因为你还得久就变好。</strong></p>
+<h3 id="s332e3320e794a8e6">3.3 用本文的语言重述这件事</h3>
+<p class="cap"><em>现在请本院把这段话翻译成本纪要第一章的语言。</em></p>
+<p class="cap"><em>重正化群的递推是：</em></p>
+<blockquote><p>`g(n+1) = g(n) + ε · β(g(n))`</p></blockquote>
+<p class="cap"><em>右边只有 `g(n)`。这是一个一阶递推。</em></p>
+<p class="cap"><em>而一阶递推有一个本院在 1.4 节讲过的性质：它只有一族解。</em></p>
+<p>　　　<strong>一族解意味着什么？意味着系统只有一个「去处」。</strong></p>
+<p class="cap"><em>在可重正化的情形下，这个性质是有利的<strong>：β 函数在某个能标处穿过零点，递推在那里停住，</strong>系统落进不动点。<strong>这就是渐近自由——</strong>耦合在高能标下趋于零，理论自洽。</em></p>
+<p class="cap"><em>而在引力里，β 函数的符号是「错」的<strong>：`G` 的有效值随能标上升而增大，</strong>递推没有地方停。</em></p>
+<p>　　　<strong>本院把这句话作为本纪要的核心猜测写在这里：</strong></p>
+<p>　　　　<strong>引力之所以没有地方停，是因为它的递推里没有前一项。</strong></p>
+<p>　　　　<strong>因为缺了前一项，它就没有第二族解；而没有第二族解，它就没有「另一条路」。</strong></p>
+<h3 id="s332e3420e8bf99e4">3.4 这个猜测的可检验后果</h3>
+<p class="cap"><em>一个猜测如果没有任何后果，它就不该被写下来。</em></p>
+<p class="cap"><em>本院的猜测有两个后果：</em></p>
+<p class="cap"><em>第一个后果<strong>：如果给引力的重正化群递推</strong>人为加上一个记忆项<strong>，那么在某些条件下，</strong>应该能出现一个新的不动点。</em></p>
+<p>　　　<strong>而这个「应该」是有先例的</strong>——第四章会说明，四条主流路线正是在做这件事，<strong>而其中一条（渐近安全）明确报告了这样一个不动点。</strong></p>
+<p class="cap"><em>第二个后果<strong>：这个不动点</strong>不应该出现在所有能标上，而应该只出现在记忆项的系数超过某个阈值的地方。</em></p>
+<p>　　　<strong>这个后果本院目前无法检验。</strong>本院把它列在这里，<strong>是希望它能被检验，而不是假装它已经被检验。</strong></p>
+<h3 id="s332e3520e69cace7">3.5 本章的边界</h3>
+<p class="cap"><em>本章的核心主张——「引力缺一个记忆项」——是一个类比性的说法。本院给它丙级。</em></p>
+<p class="cap"><em>本院必须提醒读者：量子场论里的「阶」指的是递推依赖几步历史，而本院到现在为止，只给出了形状上的对应，没有给出从作用量到递推的严格推导。</em></p>
+<p>　　　<strong>换言之：本院说的是一台机器「看起来像」另一台机器，而不是它们「是」同一台机器。</strong></p>
+<p class="cap"><em>这个区分很重要。本院在第五章会尝试走得更远一点；如果走不通，那么本章的价值就只剩下一句可以被证伪的话。</em></p>
+<hr>
+<h2 id="se7acace59b9be7ab">第四章　四条路线，一个形状</h2>
+<h3 id="s342e3120e4b8bae4">4.1 为什么要把这四条摆在一起</h3>
+<p class="cap"><em>研究统一理论的路线不止四条，但本院选这四条，是因为它们的做法差异足够大：</em></p>
+<table><thead><tr><th>路线</th><th>一句话做法</th></tr></thead><tbody><tr><td><strong>弦论</strong></td><td>把点粒子换成弦</td></tr><tr><td><strong>圈量子引力</strong></td><td>把几何本身量子化</td></tr><tr><td><strong>渐近安全</strong></td><td>承认发散，但主张它被一个不动点吸收</td></tr><tr><td><strong>因果动力学三角剖分</strong></td><td>把时空离散成单纯形，让连续从离散里长出来</td></tr></tbody></table>
+<p class="cap"><em>一条改对象，一条改几何，一条改收敛性的判断，一条改底层的离散性。</em></p>
+<p>　　　<strong>而本院要指出的是：这四条路，在数学上都在做同一件事。</strong></p>
+<h3 id="s342e3220e5bca6e8">4.2 弦论：把无穷多的项一次装进去</h3>
+<p class="cap"><em>弦论对付发散的方式，是把点粒子的传播子换成弦的传播子。</em></p>
+<p><strong>一根弦有无穷多个振动模式，而每一个模式对应一个粒子。</strong>所以弦论的谱里<strong>天然带着无穷多个场</strong>。</p>
+<p>　　　<strong>用本纪要的语言说：弦论是把「被略掉的前一项」重新塞回理论里，而塞回去的方式是给基本对象加一个延展的方向。</strong></p>
+<p><strong>这个做法的代价是显而易见的</strong>：它需要额外维度、需要超对称、需要一个至今没有实验支持的能标。</p>
+<p class="cap"><em>但它也解释了一件事<strong>：</strong>为什么弦论是唯一一个能自动把引力包含进来的框架。<strong>因为引力子是闭弦的最低激发——</strong>它不是被塞进去的，它本来就在那里。</em></p>
+<h3 id="s342e3320e59c88e9">4.3 圈量子引力：把几何换成算符</h3>
+<p class="cap"><em>圈量子引力的出发点完全不同：它不去改粒子，而去改几何。</em></p>
+<p class="cap"><em>它的做法是把面积与体积变成算符，于是它们有了离散的谱。</em></p>
+<p>　　　<strong>用本纪要的语言说：圈量子引力是主张「几何量本身有最小台阶」。</strong></p>
+<p class="cap"><em>而「有最小台阶」在递推的语言里意味着什么？</em></p>
+<p>　　　<strong>意味着能标不能无限往下走——它有一个底。</strong></p>
+<p class="cap"><em>而一个递推如果有底，那么它就不是一直往下跑的<strong>：</strong>它在某个地方停住，然后需要另一条规则来决定接下来怎么办。</em></p>
+<p>　　　<strong>本院把这句话记为一条观察，而不是一条结论。</strong></p>
+<h3 id="s342e3420e6b890e8">4.4 渐近安全：承认发散，但主张它被吸收</h3>
+<p class="cap"><em>这是四条路线里，与本章主张最贴近的一条。</em></p>
+<p class="cap"><em>渐近安全的做法是：不去消除发散，而去问「耦合随能标跑，会不会跑到一个不动点上去」。</em></p>
+<p class="cap"><em>而它的答案是：会。<strong>在截断式的重正化群方程里，</strong>引力耦合 `G` 与宇宙学常数 `Λ` 的无量纲版本，会跑到一个紫外不动点上。</em></p>
+<p>　　　<strong>换言之：渐近安全的主张是——引力的递推有地方停，只是那个地方不在零，而在一个非零值上。</strong></p>
+<p><strong>这与本院第三章的猜测并不冲突，而且本院认为它们是相容的</strong>：</p>
+<p>　　　<strong>如果引力的递推缺了一个记忆项，而渐近安全给它找到了一个不动点，那么这个不动点可能是「补上记忆项之后」才出现的。</strong></p>
+<p><strong>本院必须在这里说明：这是一个解释，不是证据。</strong>本院没有做这个计算。</p>
+<h3 id="s342e3520e59ba0e6">4.5 因果动力学三角剖分：让连续从离散里长出来</h3>
+<p class="cap"><em>这条路线最朴素：把时空切成一堆小三角，让它们按规则粘起来，然后看大尺度上会不会自己变成光滑时空。</em></p>
+<p class="cap"><em>它的结果是：会。<strong>在一定的参数范围内，</strong>离散的三角剖分确实长出了四维的、近似光滑的时空。</em></p>
+<p>　　　<strong>用本纪要的语言说：它主张「离散是底，连续是涌现」。</strong></p>
+<p><strong>而「涌现」这个词，在递推的语言里有一个精确的含义</strong>：</p>
+<p>　　　<strong>它指的是：底层的规则是离散的递推，而我们在高能标看不到它，看到的只是它的不动点行为。</strong></p>
+<h3 id="s342e3620e59b9be6">4.6 四条路线的共同形状</h3>
+<p class="cap"><em>现在本院把它们并排放在一起。</em></p>
+<table><thead><tr><th>路线</th><th>它改了什么</th><th><strong>用递推的语言说，它做了什么</strong></th></tr></thead><tbody><tr><td>弦论</td><td>换成延展对象</td><td><strong>把无穷多项装进基本对象</strong></td></tr><tr><td>圈量子引力</td><td>几何量子化</td><td><strong>给递推加一个底</strong></td></tr><tr><td>渐近安全</td><td>改判敛性</td><td><strong>承认递推有非零不动点</strong></td></tr><tr><td>因果三角剖分</td><td>时空离散化</td><td><strong>让递推从离散涌现</strong></td></tr></tbody></table>
+<p>　　　<strong>而它们做的其实是同一件事：</strong></p>
+<p>　　　　<strong>都在给那个「只有一阶」的递推，补上一个它原本没有的项。</strong></p>
+<ul><li>弦论把项装进对象里</li><li>圈量子引力把它装进几何的台阶里</li><li>渐近安全把它装进不动点的位置里</li><li>因果三角剖分把它装进底层的离散性里</li></ul>
+<h3 id="s342e3720e69cace9">4.7 本院的判断</h3>
+<p class="cap"><em>本院必须把这句话说清楚，否则本章会被误读：</em></p>
+<p>　　　<strong>「四条路线在做同一件事」这个说法，是一个事后的归类，不是一条物理结论。</strong></p>
+<p class="cap"><em>本院是先把四条路线读了一遍，然后发现它们可以用同一套语言来描述。这是回溯。</em></p>
+<p>　　　<strong>它能改变的只是本院对这些路线的理解方式，不能改变这些路线本身。</strong></p>
+<p class="cap"><em>而它的价值在于：如果这个归类是对的，那么它指出了一个方向<strong>——</strong>与其在四条路上分头摸索，不如直接问：那个被补上的项，究竟长什么样？</em></p>
+<p class="cap"><em>这个问题就是第五章。</em></p>
+<hr>
+<h2 id="se7acace4ba94e7ab">第五章　本文的主张：补上那一项</h2>
+<h3 id="s352e3120e58588e6">5.1 先把主张写清楚</h3>
+<p class="cap"><em>本院的主张是下面这一条。请读者注意它是一个猜测，不是一个定理。</em></p>
+<p>　　<strong>主张（记忆项假说）</strong>：</p>
+<p>　　<strong>引力的重正化群递推之所以没有可用的不动点，是因为该递推是一阶的。</strong></p>
+<p>　　<strong>如果把它升为二阶——也就是让它同时依赖当前能标与前一个能标——那么它会获得第二族解，而引力所需的那个不动点，可能出现在第二族解里。</strong></p>
+<h3 id="s352e3220e4ba8ce9">5.2 二阶递推会多出什么</h3>
+<p class="cap"><em>本院在 1.4 节给过结论。这里把它具体化。</em></p>
+<p class="cap"><em>设重正化群递推升为二阶：</em></p>
+<blockquote><p>`g(n+1) = (1 + ε·β(g(n))) · g(n) + λ · g(n−1)`</p></blockquote>
+<p class="cap"><em>其中 `λ` 是记忆项的系数。</em></p>
+<p class="cap"><em>当 `λ = 0` 时，它退化为一阶，就是我们熟悉的样子。</em></p>
+<p><strong>当 `λ ≠ 0` 时，特征方程变成二次的，</strong>它有两个根 `r₁` 与 `r₂`。</p>
+<p>　　　<strong>而这两个根，各自对应一族解。一阶理论只有一族。</strong></p>
+<h3 id="s352e3320e4b8a4e4">5.3 两个根分别意味着什么</h3>
+<p class="cap"><em>本院在这里只做一个定性的说明，请读者不要把它当成计算。</em></p>
+<table><thead><tr><th>根</th><th>行为</th><th>可能的物理含义</th></tr></thead><tbody><tr><td>`r₁`（接近一阶解）</td><td>主导大尺度</td><td><strong>我们熟悉的、可重正化的那一部分</strong></td></tr><tr><td>`r₂`（由记忆项带来）</td><td>在特定能标下才显著</td><td><strong>引力行为可能藏在这里</strong></td></tr></tbody></table>
+<p><strong>关键在第二行。</strong>二阶递推的两族解<strong>不是永远并肩走的</strong>——它们的相对权重随 `n` 变化。</p>
+<p>　　　<strong>这意味着：记忆项带来的那一族解，可能在大尺度上被压制到看不见，而在某个特定的能标区间里跑出来。</strong></p>
+<p><strong>而如果这件事成立，那么它解释了一个本院在第 2.3 节提过的现象</strong>：</p>
+<p>　　　<strong>为什么标准模型的三条线「几乎」交汇，却不完全交汇。</strong></p>
+<p class="cap"><em>因为「几乎」这个偏差，可能正是记忆项在起作用。</em></p>
+<p>　　　<strong>本院必须立刻补一句：这句话本院无法验证。</strong>它只是一个可能性，本院把它写在这里的理由是——<strong>它是一个可以被否定的说法</strong>（见 5.5）。</p>
+<h3 id="s352e3420e8bf99e4">5.4 这个主张与被推翻的条件</h3>
+<p class="cap"><em>本院在第 47 号里定了一条规矩：每一条回溯类结论，都必须回答「什么情况下它会被推翻」。本纪要沿用这条规矩。</em></p>
+<p class="cap"><em>本主张在以下情况下被推翻：</em></p>
+<table><thead><tr><th>序号</th><th>推翻条件</th></tr></thead><tbody><tr><td>1</td><td><strong>如果引力的紫外行为被证明与「阶」无关</strong>——例如渐近安全的不动点被证明只能出现在一阶框架内，而无法从二阶递推得到</td></tr><tr><td>2</td><td><strong>如果记忆项的引入在数学上不可实现</strong>——即不存在一个自洽的二阶重正化群方程能还原已知的低能物理</td></tr><tr><td>3</td><td><strong>如果三线不交汇的偏差被证明可以由已知效应完全解释</strong>（例如由更高阶的圈图修正解释干净），那么 5.3 节那条旁证就不成立</td></tr></tbody></table>
+<p class="cap"><em>本院把这三条写出来，是为了让读者能反驳本院，而不是为了让本院显得严谨。</em></p>
+<h3 id="s352e3520e69cace9">5.5 本院对这一章的自评</h3>
+<p class="cap"><em>本院给这一章的主张丙级。</em></p>
+<p class="cap"><em>理由有三条，本院全部写出来：</em></p>
+<p><strong>第一，从「阶」到「不动点」的这一步，本院没有做任何计算。</strong>本院做的是：<strong>看到一个二阶系统有两族解，然后说「引力可能需要第二族解」。</strong>这是一个希望，不是一个推导。</p>
+<p class="cap"><em>第二，「记忆项」在量子场论里没有明确对应物。<strong>本院借用了第 47 号的词，但</strong>本院并未说明在路径积分或算符代数里，什么东西对应「前一项」。</em></p>
+<p class="cap"><em>第三，也是最重要的一条<strong>：</strong>这个主张目前的形状，与「随便加一项就能得到想要的结果」很难区分。</em></p>
+<p>　　　<strong>本院在第 47 号的 8.3 之二里写过：一条说不出「什么情况下会错」的主张，与一条正确的主张，在读者眼里长得一模一样。</strong></p>
+<p class="cap"><em>本院在这里把这句话用在自己身上。<strong>5.4 节的三条推翻条件，就是本院对这句话的回答。</strong>如果读者认为这三条太宽松，那么读者是对的，本院接受。</em></p>
+<hr>
+<h2 id="se7acace585ade7ab">第六章　差别度是什么物理量</h2>
+<h3 id="s362e3120e58588e6">6.1 先把第 47 号的定义搬过来</h3>
+<p class="cap"><em>第 47 号里的「差别度 `D`」，指的是一个系统内部「可区分状态的多少」。<strong>它不是一个新概念——</strong>它是一个旧概念换了一个名字。</em></p>
+<p class="cap"><em>本院在这里要把这件事说清楚，因为它是本章唯一站得住的部分。</em></p>
+<table><thead><tr><th>第 47 号的 `D`</th><th>物理里的对应物</th></tr></thead><tbody><tr><td>「可区分状态的多少」</td><td><strong>状态数 `Ω`</strong></td></tr><tr><td>`D` 减少</td><td>`Ω` 减少</td></tr><tr><td>`D → 0`</td><td><strong>`Ω → 1`，只有一个状态</strong></td></tr></tbody></table>
+<p>　　　<strong>而 `S = k ln Ω`。所以 `D` 与熵是对数的关系。</strong></p>
+<p><strong>这一步本院认为是可以接受的</strong>：它只是一个翻译，不涉及新物理。</p>
+<h3 id="s362e3220e4bd86e6">6.2 但本院要说清楚它不等同于熵</h3>
+<p class="cap"><em>如果 `D` 只是熵的另一种写法，那本院就没有必要写这一章。</em></p>
+<p class="cap"><em>它们的区别在于方向：</em></p>
+<table><thead><tr><th></th><th>熵</th><th>差别度 `D`</th></tr></thead><tbody><tr><td>默认趋势</td><td><strong>增加</strong>（热力学第二定律）</td><td><strong>在封闭系统里减少</strong></td></tr><tr><td>为什么</td><td>因为微观态多</td><td><strong>因为第 47 号所讨论的「密合」</strong></td></tr></tbody></table>
+<p class="cap"><em>本院知道这两句话看起来是矛盾的。它们不矛盾，因为说的是不同的东西：</em></p>
+<p>　　　<strong>熵说的是「一个宏观态对应多少个微观态」；</strong></p>
+<p>　　　<strong>差别度说的是「这个系统里还有多少种不同的东西」。</strong></p>
+<p class="cap"><em>一个热平衡的气体，熵最大，而差别度是零<strong>——</strong>因为它全身上下都一样。</em></p>
+<p>　　　<strong>这两件事在同一个系统上可以同时成立：熵很大，而差别度为零。</strong></p>
+<p class="cap"><em>本院在第 47 号里讨论的「终末」，正是这个状态。</em></p>
+<h3 id="s362e3320e4bb8ee5">6.3 从差别度到可重正化程度</h3>
+<p class="cap"><em>这是本章的核心猜测。本院先把它单独写出来：</em></p>
+<p>　　<strong>猜测（对应假说）</strong>：</p>
+<p>　　<strong>物理理论的可重正化程度，与该理论所描述系统的差别度，是同一个量的两种说法。</strong></p>
+<p class="cap"><em>它的意思是：</em></p>
+<table><thead><tr><th></th><th>说法一</th><th>说法二</th></tr></thead><tbody><tr><td>可重正化</td><td>需要新的反项来吸收发散</td><td><strong>新的差别在不断地产生</strong></td></tr><tr><td>不可重正化</td><td>反项不够用，发散无法吸收</td><td><strong>新的差别产生的速度超过了处理能力</strong></td></tr><tr><td>渐近安全</td><td>有不动点，发散被吸收</td><td><strong>差别产生与差别合并达到平衡</strong></td></tr></tbody></table>
+<p><strong>本院在这里用一个不严格的类比来说明它</strong>：</p>
+<p>　　　<strong>重正化就是「把新的差别吸收进旧的定义里」。</strong></p>
+<p>　　　<strong>可重正化，意味着这个吸收过程是收敛的。</strong></p>
+<p>　　　<strong>不可重正化，意味着新的差别冒出来的速度，超过了吸收的速度。</strong></p>
+<p class="cap"><em>而在第 47 号的语言里，「差别冒出来」这件事有一个名字：</em></p>
+<p>　　　<strong>它叫 D 在增加。</strong></p>
+<h3 id="s362e3420e69cace9">6.4 本院对这个猜测的自评</h3>
+<p class="cap"><em>本院给这一章丙级。理由如下：</em></p>
+<p class="cap"><em>第一，「可重正化程度」这个词，本院没有给出定义。<strong>物理里没有一个叫「可重正化程度」的量——</strong>理论要么可重正化，要么不可，它是一个二值属性，不是一个连续量。</em></p>
+<p>　　　<strong>本院若要主张对应，就必须先造出那个连续量。本院没有造。</strong></p>
+<p class="cap"><em>第二，本院给出的三行对应表，是本院「翻译」出来的，不是从任何计算里出来的。</em></p>
+<p class="cap"><em>第三，也是最要紧的一条<strong>：</strong>这个猜测目前没有任何可检验的后果。</em></p>
+<p>　　　<strong>一个说不出任何后果的猜测，按照本院自己在 8.3 之二里的标准，是不合格的。</strong></p>
+<p class="cap"><em>本院把它写在这里的理由只有一个：它可能指对了地方。</em></p>
+<p>　　　<strong>如果它对，那么「引力不可重正化」与「提瓦特必然归零」就是同一件事在不同语言里的两次陈述。</strong></p>
+<p>　　　<strong>如果它错，那么本纪要与第 47 号的关系，就比本院希望的要松得多。</strong></p>
+<p class="cap"><em>本院选择把它写出来并标为丙级，而不是把它删掉——因为删掉它，读者就看不到本院到底在猜什么。</em></p>
+<hr>
+<h2 id="se7acace4b883e7ab">第七章　把它套到提瓦特</h2>
+<h3 id="s372e3120e4b8bae4">7.1 为什么提瓦特是一个合适的检验场</h3>
+<p class="cap"><em>本院在这里提出的主张，与前面几章不同：它不是关于物理的，而是关于「我们在哪里检验物理」的。</em></p>
+<p class="cap"><em>一个理论最难的部分，往往不是提出它，而是找到一个能把它逼到墙角的地方。</em></p>
+<p class="cap"><em>本院认为提瓦特（指第 47 号所研究的那个系统）适合充当这个角色，理由有三条：</em></p>
+<table><thead><tr><th>理由</th><th>说明</th></tr></thead><tbody><tr><td><strong>一、它被封闭</strong></td><td>有一个明确的边界（虚假之天），外部影响被切断</td></tr><tr><td><strong>二、它有边界条件</strong></td><td>有一条明确的规格（第 47 号回溯一），给出了上限</td></tr><tr><td><strong>三、它有可观测的历史</strong></td><td>葬火之战、天钉、坎瑞亚——<strong>有能力范围内的分段记录</strong></td></tr></tbody></table>
+<p>　　　<strong>换言之：它是一个参数被写在外面的封闭系统。</strong></p>
+<p class="cap"><em>而物理里的封闭系统，参数从来不是写在外面的。</em></p>
+<h3 id="s372e3220e3808ce5">7.2 「封闭」在物理里对应什么</h3>
+<p class="cap"><em>第 47 号主张提瓦特是一个封闭系统，D 在其中有减无增。</em></p>
+<p><strong>而重正化群里的对应物是「截断」</strong>：</p>
+<p>　　　<strong>一个理论只有在带上紫外截断 `Λ` 之后才是良定义的；而截断的意思是「这个能标以上的东西我们不管」。</strong></p>
+<p><strong>把这句话翻译到提瓦特</strong>：</p>
+<p>　　　<strong>虚假之天就是那个截断。</strong></p>
+<p><strong>而截断有一个必须付出代价的地方</strong>：<strong>截断破坏了对称性，因此需要反项来修补。</strong>而反项本身又依赖截断。</p>
+<p>　　　<strong>用第 47 号的语言说：为了让系统保持封闭，必须持续地投入「维护成本」。</strong></p>
+<p class="cap"><em>而第 47 号在回溯一之二里刚刚找到了这样一条材料——死之诅咒。</em></p>
+<p>　　　<strong>死之诅咒是那个维护成本的原文名字。</strong></p>
+<h3 id="s372e3320e4b889e7">7.3 三组对应</h3>
+<p class="cap"><em>本院把目前能找到的对应列在这里。</em></p>
+<table><thead><tr><th>第 47 号</th><th>物理里对应物</th><th>等级</th></tr></thead><tbody><tr><td><strong>规格</strong>（D 的上限）</td><td><strong>紫外截断 `Λ`</strong></td><td>乙级</td></tr><tr><td><strong>死之诅咒</strong>（阻止 D 增加）</td><td><strong>反项</strong>（修补截断破坏的对称性）</td><td>丙级</td></tr><tr><td><strong>天钉</strong>（一次硬截断）</td><td><strong>一次截断的重新设定</strong></td><td>丙级</td></tr></tbody></table>
+<p class="cap"><em>本院必须把这三条的等级说清楚：</em></p>
+<ul><li><strong>「规格对应截断」是乙级</strong>：两者的功能相同（都给出上限），<strong>但本院没有给出从规格到 `Λ` 的换算。</strong></li><li><strong>后面两条是丙级</strong>：<strong>它们是形状上的对应，本院找不到任何方式去检验它们。</strong></li></ul>
+<h3 id="s372e3420e4b8bae4">7.4 为什么这种对应值得写</h3>
+<p class="cap"><em>本院知道读者会问：既然只有丙级，那写它做什么。</em></p>
+<p class="cap"><em>本院有两个回答。</em></p>
+<p class="cap"><em>第一个回答是关于方向的<strong>：如果这个对应是对的，</strong>那么提瓦特的那些「维护动作」——死之诅咒、天钉、以及其他本院尚未识别的动作——就应该显示出某种周期性。</em></p>
+<p>　　　<strong>而第 47 号的补论四已经独立地给出了一个周期（约 73 年）。</strong></p>
+<p>　　　<strong>换句话说：这两条线索有一条共同的可检验后果。</strong>如果提瓦特的维护动作确实呈现约 73 年的间隔，那么 7.3 节的对应就多了一分支持。</p>
+<p><strong>第二个回答更朴素</strong>：</p>
+<p>　　　<strong>本院写第 47 号的时候，是在研究一个虚构世界；本院写第 48 号的时候，是在研究真实物理。</strong></p>
+<p>　　　<strong>而本院发现，两边的困难长得一样：都是「有一个东西算不进去」。</strong></p>
+<p>　　　<strong>一个理论在哪卡住，往往比它算了什么更能说明它是什么。</strong></p>
+<hr>
+<h2 id="se7acace585abe7ab">第八章　两个理论互相解释</h2>
+<h3 id="s382e3120e58588e6">8.1 先把「互相解释」这个词定准</h3>
+<p class="cap"><em>本院在本章要说的关系，不是「一个理论是另一个的特例」。</em></p>
+<p class="cap"><em>那种关系是单向的：母理论包含子理论。</em></p>
+<p>　　　<strong>本院要说的是双向的：两个理论各自都能为对方的困难提供一个说法。</strong></p>
+<p class="cap"><em>本院把这种关系称为「互相解释」。它在逻辑上比「包含」弱，但比「类比」强。</em></p>
+<h3 id="s382e3220e4b896e7">8.2 世界式解释大一统的什么</h3>
+<p class="cap"><em>世界式能给大一统理论提供三样东西：</em></p>
+<table><thead><tr><th>世界式提供</th><th>用在哪里</th></tr></thead><tbody><tr><td><strong>一、一个二阶递推的具体例子</strong></td><td>说明「二阶比一阶多一族解」在物理之外也成立</td></tr><tr><td><strong>二、一个「D 减少」的具体机制（密合）</strong></td><td>说明「差别合并」不是抽象概念，它有具体的算子</td></tr><tr><td><strong>三、一个「封闭系统会归零」的完整推演</strong></td><td>说明为什么截断必须付出维护成本</td></tr></tbody></table>
+<p class="cap"><em>第三样是最重要的。</em></p>
+<p>　　　<strong>物理里的截断，通常被当成一个技术手段；而第 47 号里的封闭，被证明是一个需要持续付钱的状态。</strong></p>
+<h3 id="s382e3320e5a4a7e4">8.3 大一统解释世界式的什么</h3>
+<p class="cap"><em>反过来的方向，本院认为更有价值。</em></p>
+<table><thead><tr><th>大一统提供</th><th>用在哪里</th></tr></thead><tbody><tr><td><strong>一、一个「为什么一定会有量纲问题」的框架</strong></td><td>解释了第 47 号里「规格为什么会被刻在万物之中」</td></tr><tr><td><strong>二、一个「不动点」的语言</strong></td><td>让第 47 号的「终末」可以被更精确地描述</td></tr><tr><td><strong>三、一个检验的场所</strong></td><td>物理有实验，而提瓦特没有</td></tr></tbody></table>
+<p class="cap"><em>第二样值得展开。</em></p>
+<p class="cap"><em>第 47 号说提瓦特的终末是「D 归零」。用大一统的语言说，这相当于：</em></p>
+<p>　　　<strong>这个系统的不动点是零。</strong></p>
+<p><strong>而物理里的不动点通常不是零</strong>——渐近安全的不动点是一个非零值。</p>
+<p>　　　<strong>所以「终末是零」这件事，在物理的语言里其实是一个特殊情形，而不是通例。</strong></p>
+<p><strong>这句话反过来给了第 47 号一个新的问题</strong>：</p>
+<p>　　　<strong>提瓦特的不动点为什么是零？它是被设计成零的，还是本来就是零？</strong></p>
+<p class="cap"><em>本院不知道答案。但本院认为这是一个好问题——因为它是一个第 47 号自己问不出来的问题。</em></p>
+<h3 id="s382e3420e3808ce4">8.4 「互相解释」不意味着什么</h3>
+<p class="cap"><em>本院必须在这里设三道防线，否则本章会变成一句漂亮话。</em></p>
+<p class="cap"><em>第一道：互相解释不是互相证明。</em></p>
+<p>　　　<strong>两个理论能互相解释，不构成任何一方为真的证据。</strong>一个足够灵活的框架，可以与很多东西「互相解释」——<strong>第 47 号的 8.3 之二里本院刚写过这一点。</strong></p>
+<p class="cap"><em>第二道：互相解释可能是同一套隐喻的两次使用。</em></p>
+<p>　　　<strong>本院借用了第 47 号的词（递推、不动点、差别），然后再用它们去描述物理。</strong></p>
+<p>　　　<strong>那么「两个理论互相解释」这件事，有多少是世界的性质，有多少只是本院用词的连续性？</strong></p>
+<p>　　　<strong>本院认为这个质疑是致命的，而本院没有完全的回答。</strong></p>
+<p class="cap"><em>第三道：本纪要的物理部分，比第 47 号更弱。</em></p>
+<p>　　　<strong>第 47 号有原文支撑，本纪要的第五章、第六章没有。</strong></p>
+<p>　　　<strong>本院在第 47 号里可以标甲级的地方，在本纪要里最多只能标乙级。</strong></p>
+<h3 id="s382e3520e69cace7">8.5 本章的结论</h3>
+<p class="cap"><em>本院把这一章的结论压到最小：</em></p>
+<p>　　　<strong>如果记忆项假说成立，那么本纪要与第 47 号描述的是同一件事的两种语言。</strong></p>
+<p>　　　<strong>如果它不成立，那么本纪要仍然是一个独立的问题清单——只是那些问题不再共享一个答案。</strong></p>
+<p class="cap"><em>本院认为第二种情形发生的概率更大。</em></p>
+<hr>
+<h2 id="se7acace4b99de7ab">第九章　反例、边界与待证</h2>
+<h3 id="s392e3120e69cace9">9.1 本院现在能想到的反例</h3>
+<p class="cap"><em>本院在这里列出三个可能推翻本纪要的反例。本院列出它们，是为了让读者不必自己去想。</em></p>
+<table><thead><tr><th>序号</th><th>反例</th><th>它推翻什么</th></tr></thead><tbody><tr><td><strong>一</strong></td><td>若渐近安全的不动点被严格证明<strong>只能在一阶框架内出现</strong></td><td>推翻第五章的记忆项假说</td></tr><tr><td><strong>二</strong></td><td>若标准模型三线不交汇的偏差被<strong>完全由已知效应解释</strong></td><td>推翻 5.3 节那条唯一的旁证</td></tr><tr><td><strong>三</strong></td><td>若弦论被证明可以在<strong>不接受额外维度</strong>的前提下自洽</td><td>削弱第四章的「共同形状」归类</td></tr></tbody></table>
+<p class="cap"><em>本院对第三个反例的说明<strong>：弦论需要额外维度，这是它最被诟病的一点。</strong>而如果它不需要——那么「把无穷多项装进基本对象」这个描述就不成立了。</em></p>
+<h3 id="s392e3220e69cace7">9.2 本纪要的三条边界</h3>
+<table><thead><tr><th>边界</th><th>说明</th></tr></thead><tbody><tr><td><strong>一、本院没有做计算</strong></td><td>第五、六章的核心主张，本院一个数都没算。<strong>这是本纪要最大的弱点。</strong></td></tr><tr><td><strong>二、本院是研究者，不是物理学家</strong></td><td>本院读的是二手材料，<strong>引用可能存在错误。</strong></td></tr><tr><td><strong>三、本院的语言是借来的</strong></td><td>递推、阶、不动点——这些词本院从第 47 号借来。<strong>借词描述的风险，见 8.4 节第二道防线。</strong></td></tr></tbody></table>
+<h3 id="s392e3320e5be85e8">9.3 待证清单</h3>
+<p class="cap"><em>本院把本纪要提出的、尚未解决的具体问题列在这里。</em></p>
+<table><thead><tr><th>序号</th><th>问题</th><th>可能的推进方式</th></tr></thead><tbody><tr><td>1</td><td>二阶重正化群方程是否存在自洽形式？</td><td>直接构造并检查低能极限</td></tr><tr><td>2</td><td>若存在，其不动点位置如何依赖记忆项系数？</td><td>数值求解</td></tr><tr><td>3</td><td>「可重正化程度」能否被定义为一个连续量？</td><td>从截断依赖性的某个度量入手</td></tr><tr><td>4</td><td>提瓦特的维护动作是否真的呈约 73 年周期？</td><td>收集更多的原文材料</td></tr><tr><td>5</td><td>若不呈周期，能否排除 7.3 节的对应？</td><td>需要先明确「维护动作」的判据</td></tr></tbody></table>
+<p class="cap"><em>第 5 条本院要特别说明<strong>：</strong>它目前不是一个可检验的问题<strong>，因为「什么算维护动作」本院没有定义。</strong>本院把它列出来，是为了标出缺口，而不是为了假装它可以被检验。</em></p>
+<h3 id="s392e3420e69cace9">9.4 本院对整份纪要的自评</h3>
+<p class="cap"><em>本院给本纪要的整体评价是：一个值得继续的问题，与一份还不够格被称为理论的答卷。</em></p>
+<p class="cap"><em>如果读者读完只记住一件事，本院希望是这一件：</em></p>
+<p>　　　<strong>统一理论的困难，可能不在于我们少了一个公式，而在于我们少了一阶。</strong></p>
+<hr>
+<h2 id="se99984e5bd952041">附录 A　术语对照</h2>
+<p class="cap"><em>本纪要大量借用了第 47 号的词。本附录把借用关系列清楚，以便读者分辨「物理里的词」与「本院借来的词」。</em></p>
+<table><thead><tr><th>本纪要用的词</th><th>来源</th><th>物理里是否有对应物</th></tr></thead><tbody><tr><td><strong>递推的阶</strong></td><td>数学</td><td><strong>有</strong>（差分方程的阶）</td></tr><tr><td><strong>记忆项</strong></td><td>本院借第 47 号</td><td><strong>无</strong>（这是本院的用法）</td></tr><tr><td><strong>不动点</strong></td><td>数学</td><td><strong>有</strong>（重正化群、动力系统）</td></tr><tr><td><strong>截断</strong></td><td>量子场论</td><td><strong>有</strong></td></tr><tr><td><strong>反项</strong></td><td>量子场论</td><td><strong>有</strong></td></tr><tr><td><strong>差别度 `D`</strong></td><td>第 47 号</td><td><strong>部分有</strong>（对应状态数，见 6.1）</td></tr><tr><td><strong>密合</strong></td><td>第 47 号</td><td><strong>无</strong></td></tr><tr><td><strong>规格</strong></td><td>第 47 号</td><td><strong>无</strong>（本院主张它对应截断，见 7.3）</td></tr><tr><td><strong>可重正化程度</strong></td><td><strong>本院自造</strong></td><td><strong>无</strong>（见 6.4 节第一条）</td></tr></tbody></table>
+<p class="cap"><em>本院把最后一行单独标出来，因为它是本纪要最薄弱的一个词。</em></p>
+<p>　　　<strong>一个自造的词，如果不指向任何可测的东西，那么用它做的推论就都是空的。</strong></p>
+<h2 id="se99984e5bd952042">附录 B　本纪要的已知错误与修正记录</h2>
+<p class="cap"><em>本院沿用第 47 号附录 D 的体例：把错误记下来，而不是删掉。</em></p>
+<h3 id="se4b880e38081e5b7">一、已经发现的错误</h3>
+<table><thead><tr><th>序号</th><th>错误</th><th>状态</th></tr></thead><tbody><tr><td>1</td><td>初稿把「四条路线在做同一件事」写成了结论，而不是归类</td><td><strong>已改</strong>（见 4.7 节）</td></tr><tr><td>2</td><td>初稿在 5.3 节断言「三线不交汇的偏差来自记忆项」，未标等级</td><td><strong>已改为可能性</strong>，并加入 5.4 节的推翻条件</td></tr><tr><td>3</td><td>初稿遗漏了「本院没有做任何计算」这一条自评</td><td><strong>已补</strong>（见 5.5、9.2 节）</td></tr></tbody></table>
+<h3 id="se4ba8ce38081e69c">二、本院希望读者做的一件事</h3>
+<p class="cap"><em>第 47 号里本院写过一段话，这里原样重复：</em></p>
+<blockquote><p><strong>一条说不出「什么情况下会错」的主张，与一条正确的主张，在读者眼里长得一模一样。</strong></p></blockquote>
+<p class="cap"><em>本院在 5.4 节与 9.1 节各列了一组推翻条件。如果读者认为那些条件太宽松、或者根本不可能被检验，请直接告诉本院。</em></p>
+<p>　　　<strong>能挑出这种毛病的读者，比能夸奖本院的读者有用得多。</strong></p>
+<h2 id="se99984e5bd952043">附录 C　本纪要未引用的重要路线</h2>
+<p class="cap"><em>本院在第四章只讲了四条路线。以下几条本院知道但没有写进来，理由如下。</em></p>
+<table><thead><tr><th>路线</th><th>为什么没写</th></tr></thead><tbody><tr><td><strong>因果集理论</strong></td><td>与因果动力学三角剖分在思路上相近，<strong>写进来会让第四章显得重复</strong></td></tr><tr><td><strong>扭量理论</strong></td><td>本院读不懂，<strong>不敢转述</strong></td></tr><tr><td><strong>全息原理／AdS-CFT</strong></td><td>它与第四章四条路线的关系不是并列的，<strong>而是可以覆盖其中几条的框架</strong>，本院没有把握把它放在同一张表里</td></tr><tr><td><strong>非对易几何</strong></td><td>同上，本院理解不足</td></tr></tbody></table>
+<p class="cap"><em>本院把这张表放出来，是为了说明第四章的「四条」是一个选择，不是一个完整清单。</em></p>
+<p>　　　<strong>一份声称穷尽了路线的纪要，通常漏得更多。</strong></p>
+<hr>
+<h2 id="se5908ee8aeb0">后记</h2>
+<h3 id="se7a094e7a9b6e591">研究员写的部分</h3>
+<p class="cap"><em>第 47 号研究的是一个算式，第 48 号研究的是一个困难。</em></p>
+<p class="cap"><em>而本院在写这两份纪要的过程中，最常想到的是一个很朴素的问题：</em></p>
+<p>　　　<strong>为什么「统一」这件事这么难？</strong></p>
+<p class="cap"><em>本院现在能给出的回答是：因为我们手里那台机器，只会往一个方向看。</em></p>
+<p class="cap"><em>重正化群递推要看前一步，才能知道下一步——而它只看当前这一步。<strong>这在大多数时候是优点：</strong>它让计算变得可能。</em></p>
+<p>　　　<strong>但到了引力那里，这个优点变成了限制。</strong></p>
+<p class="cap"><em>本院不知道「加一项」是不是对的答案。本院只知道：如果你手里的机器只会往一个方向看，那么当它看不到路的时候，值得问一句——它是不是本来该往两个方向看。</em></p>
+<h3 id="se581b7e6b8a1e5ae">偷渡客写的部分</h3>
+<p class="cap"><em>他在第 47 号里写过一段话，这里他写的是更短的一段：</em></p>
+<blockquote><p><strong>我在两个世界之间来回，所以我大概比你们都更清楚一件事：</strong></p><p></p><p><strong>所谓「统一」，不是把两样东西变成一个。</strong></p><p></p><p><strong>是让两样东西能互相说话。</strong></p><p></p><p><strong>第 47 号讲的是一个世界怎么把自己变成一个。第 48 号讲的是两个世界怎么互相听懂。</strong></p><p></p><p><strong>我认为后一件事更难，也更有意思。</strong></p></blockquote>
+<h3 id="se585b1e5908ce586">共同写的部分</h3>
+<p class="cap"><em>本院与他的共同结论只有一句：</em></p>
+<p>　　　<strong>这两份纪要里，真正值钱的不是那些对应关系，而是那些被标成丙级的地方。</strong></p>
+<p>　　　<strong>因为它们标出了我们不知道什么。</strong></p>
+<hr>
+<h3 id="se28094e28094e69e">——枫丹科学院非常规现象研究室 内部研究纪要 第 48 号　完</h3>
+</div>
+</body>
+</html>
