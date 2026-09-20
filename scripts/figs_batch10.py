@@ -36,7 +36,7 @@ for name, what, eff, nature, col, y in rows:
 ax.add_patch(FancyBboxPatch((0.35, 0.35), 11.9, 0.98, boxstyle="round,pad=0.08,rounding_size=0.18", fc="#FFF8E6", ec=GOLD, lw=1.7))
 ax.text(6.3, 0.84, "四象限里「灵魂」与「人格」可分开处理 —— 剥掉人格、灵魂回仓库、下次配新人格。这就是轮回。",
         ha="center", va="center", fontsize=11.4, color="#6A4E00")
-save(fig, "fig29-three-operations.png")
+save(fig, "fig28-three-operations.png")
 
 # ---------- 图30 变量位时间表 ----------
 fig, ax = plt.subplots(figsize=(13.0, 5.4))
@@ -62,5 +62,5 @@ for i, (t, v, s, f, col) in enumerate(data):
     ax.text(xs[3], y, f, fontsize=11.6, color=col, va="center", fontweight="bold")
 ax.add_patch(FancyBboxPatch((0.2, 0.22), 12.6, 0.72, boxstyle="round,pad=0.06,rounding_size=0.16", fc="#EAF4F4", ec=TEAL, lw=1.6))
 ax.text(6.5, 0.58, "雷内计算的时间点，落在倒数第二行 —— 变量位是空的。", ha="center", va="center", fontsize=12.4, color=NAVY, fontweight="bold")
-save(fig, "fig30-variable-slot.png")
+save(fig, "fig29-variable-slot.png")
 print("补论七/八插图完成")

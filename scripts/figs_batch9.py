@@ -36,7 +36,7 @@ ax.set_title("图 27　「规格」：每一株植物都有一条自己的界限
 ax.set_xlim(1, 20); ax.set_ylim(0, 18)
 ax.legend(fontsize=9.8, loc="lower left", framealpha=0.95)
 ax.grid(alpha=0.22); ax.set_axisbelow(True)
-save(fig, "fig27-spec-limit.png")
+save(fig, "fig26-spec-limit.png")
 
 # ---------- 图28：规格的三个性质 ----------
 fig, ax = plt.subplots(figsize=(12.6, 5.2)); ax.set_xlim(0, 12.6); ax.set_ylim(0, 5.2); ax.axis("off")
@@ -53,5 +53,5 @@ for i, (t, q, d, col) in enumerate(cards):
     ax.text(x+1.9, 3.06, q, ha="center", va="center", fontsize=10.2, color=NAVY, linespacing=1.6)
     ax.text(x+1.9, 1.85, d, ha="center", va="center", fontsize=10.6, color=col, linespacing=1.7, fontweight="bold")
 ax.text(6.3, 0.42, "图 28　「规格」的三个性质：普遍、分对象、可被抬高", ha="center", fontsize=11.5, color=GREY)
-save(fig, "fig28-spec-properties.png")
+save(fig, "fig27-spec-properties.png")
 print("补论六插图完成")

@@ -27,7 +27,7 @@ for s, e in [(66, 24), (-24, -66), (204, 246), (114, 156)]:
 ax.text(0, 0, "怪\n圈", ha="center", va="center", fontsize=27, color=NAVY, fontweight="bold", alpha=0.82)
 ax.text(0, -1.05, "strange loop", ha="center", fontsize=9.5, color=GREY, style="italic")
 ax.text(0, -4.62, "图 6　世界式是一个自指递归：下一个世界由世界自身（及其前态）生成", ha="center", fontsize=10.5, color=GREY)
-save(fig, "fig06-selfloop.png")
+save(fig, "fig05-selfloop.png")
 
 # ---------- 图7 三层结构 ----------
 fig, ax = plt.subplots(figsize=(12, 7.2)); ax.set_xlim(0, 12); ax.set_ylim(0, 7.6); ax.axis("off")
@@ -44,7 +44,7 @@ for y, h, title, col, desc in layers:
 ax.add_patch(FancyArrowPatch((11.05, 1.4), (11.05, 7.2), arrowstyle="-|>", lw=2.0, color=GREY, mutation_scale=16))
 ax.text(11.35, 4.3, "抽象层级升高", rotation=90, va="center", ha="center", fontsize=9.5, color=GREY)
 ax.text(6.0, 0.05, "图 7　同一个方程在三个抽象层级上的投影", ha="center", fontsize=10.5, color=GREY)
-save(fig, "fig07-threelayers.png")
+save(fig, "fig08-threelayers.png")
 
 # ---------- 图8 意志四象限 ----------
 fig, ax = plt.subplots(figsize=(8.4, 7.4)); ax.set_xlim(-5.2, 5.2); ax.set_ylim(-5.0, 5.2); ax.axis("off")
@@ -62,7 +62,7 @@ ax.text(4.55, 0.28, "本质", fontsize=10, color=NAVY); ax.text(-4.5, 0.28, "表
 ax.text(0.16, 4.55, "过去", fontsize=10, color=NAVY, rotation=90, va="top")
 ax.text(0.16, -4.55, "未来", fontsize=10, color=NAVY, rotation=90, va="bottom")
 ax.text(0, -4.95, "图 8　意志四象限：格式塔把众生意志按这四个格子归档", ha="center", fontsize=10.5, color=GREY)
-save(fig, "fig08-quadrants.png")
+save(fig, "fig13-quadrants.png")
 
 # ---------- 图9 哥德尔 ----------
 fig, ax = plt.subplots(figsize=(11.5, 6.4)); ax.set_xlim(0, 11.5); ax.set_ylim(0, 6.6); ax.axis("off")
@@ -121,5 +121,5 @@ ax.set_ylabel("数值", fontsize=10.5); ax.set_ylim(-16, 140)
 ax.set_title("图 11　卢卡斯数列 2,1,3,4,7,11,18,… 与提瓦特宇宙学阶梯", fontsize=12.5, color=NAVY, pad=14)
 ax.text(0.5, 0.055, "3 + 4 = 7　　4 + 7 = 11　　7 + 11 = 18　（每一项等于前两项之和）", transform=ax.transAxes, ha="center", fontsize=10.2, color=GOLD)
 ax.grid(axis="y", alpha=0.22); ax.set_axisbelow(True)
-save(fig, "fig11-lucas.png")
+save(fig, "fig04-lucas.png")
 print("第2批完成")

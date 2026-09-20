@@ -35,7 +35,7 @@ ax.set_xlabel("加热时间 t", fontsize=11); ax.set_ylabel("可分辨的感官�
 ax.set_title("图 17　甜甜花酿鸡的 D(t) 轨迹：火候就是曲线最高那一点", fontsize=12.8, color=NAVY, pad=12)
 ax.set_ylim(-3, 82); ax.set_xlim(-0.2, 10)
 ax.grid(alpha=0.22); ax.set_axisbelow(True)
-save(fig, "fig17-cooking-curve.png")
+save(fig, "fig16-cooking-curve.png")
 
 # ---------- 图18：四象限填充 ----------
 fig, ax = plt.subplots(figsize=(9.6, 7.8)); ax.set_xlim(-5.6, 5.6); ax.set_ylim(-5.4, 5.6); ax.axis("off")
@@ -57,5 +57,5 @@ ax.text(4.75, 0.30, "本质", fontsize=10, color=NAVY); ax.text(-4.75, 0.30, "�
 ax.text(0.18, 4.75, "过去", fontsize=10, color=NAVY, rotation=90, va="top")
 ax.text(0.18, -4.75, "未来", fontsize=10, color=NAVY, rotation=90, va="bottom")
 ax.text(0, -5.28, "图 18　两味原料填满四个象限：禽肉占灵魂与记忆，甜甜花占表象与愿望", ha="center", fontsize=11, color=GREY)
-save(fig, "fig18-recipe-quadrants.png")
+save(fig, "fig17-recipe-quadrants.png")
 print("补论插图完成")

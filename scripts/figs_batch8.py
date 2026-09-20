@@ -45,7 +45,7 @@ ax.add_patch(FancyBboxPatch((1.0, 1.05), 8.0, 1.30, boxstyle="round,pad=0.10,rou
 ax.text(5.0, 1.70, "D 一点没动 → 账上没扣 → 可逆", ha="center", va="center", fontsize=11.5, color="#1B6B62", fontweight="bold")
 ax.text(5.0, 0.35, "失去的不是存在，是通路", ha="center", fontsize=9.6, color=GREY)
 fig.suptitle("图 25　世界式里两种完全不同的「失去」", fontsize=13.5, color=NAVY, y=1.00)
-save(fig, "fig25-two-kinds-of-loss.png")
+save(fig, "fig24-two-kinds-of-loss.png")
 
 # ---------- 图26：四象限对照 ----------
 fig, axes = plt.subplots(1, 2, figsize=(12.4, 6.4))
@@ -73,5 +73,5 @@ for ax, (title, quads, alive) in zip(axes, info):
     else:
         ax.text(0, 5.30, "没有可恢复的对象", ha="center", fontsize=9.8, color=GREY)
 fig.suptitle("图 26　能不能回来，取决于四象限还剩几格", fontsize=13.5, color=NAVY, y=1.00)
-save(fig, "fig26-quadrants-compare.png")
+save(fig, "fig25-quadrants-compare.png")
 print("补论五插图完成")

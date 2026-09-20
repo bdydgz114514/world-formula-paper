@@ -85,7 +85,7 @@ ax.add_patch(FancyArrowPatch((-4.1, 0.35), (-2.0, -1.05), arrowstyle="-|>", lw=1
 ax.add_patch(FancyArrowPatch((4.1, 0.35), (2.0, -1.05), arrowstyle="-|>", lw=1.6, color=GREY, mutation_scale=14))
 ax.text(0, 0.72, "雷内：「就像水银不会和水融合，但是会互相融合」", ha="center", fontsize=9.5, color="#7A5C00", style="italic")
 ax.text(0, -3.25, "图 3　提瓦特仅有的两种底层力，都是「消灭差别」的收缩算子", ha="center", fontsize=10.5, color=GREY)
-save(fig, "fig03-two-forces.png")
+save(fig, "fig06-two-forces.png")
 
 # ---------- 图4 D(t) 曲线 ----------
 fig, ax = plt.subplots(figsize=(10.5, 5.6))
@@ -101,7 +101,7 @@ ax.set_xlabel("时间", fontsize=11); ax.set_ylabel("差别度 D", fontsize=11)
 ax.set_title("图 4　同一个递推式的两种命运", fontsize=12.5, color=NAVY)
 ax.legend(fontsize=10, loc="upper right"); ax.grid(alpha=0.25)
 ax.set_ylim(-4, 112)
-save(fig, "fig04-curves.png")
+save(fig, "fig07-curves.png")
 
 # ---------- 图5 密合算子 ----------
 fig, ax = plt.subplots(figsize=(11, 5))
@@ -119,5 +119,5 @@ ax.add_patch(FancyArrowPatch((7.6, 3.35), (8.2, 3.35), arrowstyle="-|>", lw=2.2,
 ax.text(5.5, 1.35, "3 + 4 = 7　　4 + 7 = 11　　7 + 11 = 18　　→ 连续的卢卡斯数", ha="center", fontsize=11.5, color=NAVY)
 ax.text(5.5, 0.72, "密合（coniunctio）＝炼金术的「化学婚礼」：把两个对立项熔为一体", ha="center", fontsize=10, color=GREY)
 ax.text(5.5, 0.15, "图 5　世界式的生成算子", ha="center", fontsize=10.5, color=GREY)
-save(fig, "fig05-coniunctio.png")
+save(fig, "fig03-coniunctio.png")
 print("第1批完成")

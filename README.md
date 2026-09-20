@@ -22,10 +22,11 @@
 | `世界式论文.html` | **推荐阅读**。单文件、30 张图全部内嵌，双击即可用浏览器打开；支持打印为 PDF |
 | `大一统理论纲要.html` | 同上，48 号，14 张图内嵌 |
 | `讲稿-总集.docx` | **讲稿的正式交付物**，5 部 166 页，每页另起一页，表格为真正的 Word 表格 |
+| `lecture3-unified/世界式-第三期-大一统理论.pptx` | 第 48 号的课件，27 页，14 张插图全部用上；每页由 `page-*.svg` 经 Edge 无头渲染成 1920×1080 后打进 pptx |
 | `讲稿-总集.html` | 讲稿的网页版，便于检索与打印 |
 | `*.md` | 三个源文件，便于二次编辑 |
-| `figures/` | 44 张自制插图（PNG，190 DPI） |
-| `figs_batch1.py` ~ `figs_batch10.py`、`figs_unified.py` | 插图生成脚本（matplotlib），可重新生成 |
+| `figures/` | 44 张自制插图（PNG，190 DPI）。**第 47 号的 30 张按正文出现顺序编号**（`fig01`…`fig30`）；第 48 号单独编号（`figU01`…`figU14`） |
+| `figs_batch1.py` ~ `figs_batch10.py`、`fig_fix*.py`、`figs_unified.py` | 插图生成脚本（matplotlib），可重新生成；文件名与「图 N」编号同步 |
 | `check-flow.mjs` | 单向流动闸门 + 术语覆盖率 + 出戏词 + 插图 + 页码检查 |
 | `build-html.mjs` | Markdown → 自包含 HTML |
 | `lecture2/build-docx.mjs` | 讲稿 Markdown → Word |

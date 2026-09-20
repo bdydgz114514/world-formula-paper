@@ -40,7 +40,7 @@ for i, (need, real, tey, col) in enumerate(rows):
 ax.add_patch(FancyBboxPatch((0.35, 0.30), 11.0, 0.90, boxstyle="round,pad=0.08,rounding_size=0.18", fc="#FFF8E6", ec=GOLD, lw=1.7))
 ax.text(5.85, 0.75, "红色那一行就是问题所在：石油在提瓦特存不下来，于是「胶基」必须换一个来源。薄荷的果胶顶上来了。",
         ha="center", va="center", fontsize=10.6, color="#6A4E00")
-save(fig, "fig19-gumbase-source.png")
+save(fig, "fig18-gumbase-source.png")
 
 # ---------- 图20：弹性 vs 同化 ----------
 fig, axes = plt.subplots(1, 2, figsize=(12.6, 5.4))
@@ -70,5 +70,5 @@ for ax in axes:
     ax.grid(alpha=0.2); ax.set_axisbelow(True)
 axes[1].legend(fontsize=9.5, loc="lower right")
 fig.suptitle("图 20　弹性为什么必须建立在「不顾同化」的力上", fontsize=12.8, color=NAVY, y=1.00)
-save(fig, "fig20-elasticity-vs-assimilation.png")
+save(fig, "fig19-elasticity-vs-assimilation.png")
 print("补论二插图完成")
