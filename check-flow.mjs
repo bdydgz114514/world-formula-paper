@@ -255,6 +255,43 @@ for (const f of [...PAPERS, ...LECTURES]) {
 }
 console.log(tblBad ? "  共 " + tblN + " 张表，" + tblBad + " 张有问题" : "  ✔ " + tblN + " 张表全部完整（列数一致 + 有表头分隔行）");
 
+// ---------- 9. 统计数字一致性（台账是真值，正文里凡引用它的数字都必须对得上） ----------
+// 来历：C01 从甲级降为乙级之后，「甲级 11 / 乙级 10」在论文第三卷、讲稿、课件里漂了三天没人发现。
+console.log("\n=== 统计数字一致性（以 主张台账.json 为准） ===");
+{
+  const led = JSON.parse(rd("主张台账.json"));
+  const dirs = {}, grades = {};
+  for (const c of led.claims) { dirs[c.direction] = (dirs[c.direction] || 0) + 1; grades[c.grade] = (grades[c.grade] || 0) + 1; }
+  const truth = {
+    total: led.claims.length, 回溯: dirs["回溯"] || 0, 预测: dirs["预测"] || 0,
+    甲级: grades["甲级"] || 0, 乙级: grades["乙级"] || 0, 丙级: grades["丙级"] || 0,
+    有推翻条件: led.claims.filter((c) => c.falsify).length,
+  };
+  // 表格形式要求数字**自成一格**（后面紧跟 | ），否则会把「| **丙级** | 3.2 之三… |」的节号误读成条数
+  // 只认「两格」的表行（| **X** | N | 行尾），否则交叉表的第一格会被误读成总数
+  const cell = (k) => "\\|\\s*\\*\\*" + k + "\\*\\*\\s*\\|\\s*(\\d+)\\s*\\|\\s*$";
+  const pats = [["甲级", new RegExp("甲级\\s*(\\d+)\\s*条|" + cell("甲级"), "g")],
+                ["乙级", new RegExp("乙级\\s*(\\d+)\\s*条|" + cell("乙级"), "g")],
+                ["丙级", new RegExp("丙级\\s*(\\d+)\\s*条|" + cell("丙级"), "g")],
+                ["回溯", new RegExp("回溯\\s*(\\d+)\\s*条|" + cell("回溯"), "g")],
+                ["预测", new RegExp("预测\\s*(\\d+)\\s*条|" + cell("预测"), "g")]];
+  let bad = 0, seen = 0;
+  for (const f of [MERGED, ...LECTURES]) {
+    if (!has(f)) continue;
+    const txt = rd(f);
+    for (const [key, re] of pats) {
+      for (const m of txt.matchAll(re)) {
+        const n = +(m[1] || m[2]);
+        if (!Number.isFinite(n)) continue;
+        seen++;
+        if (n !== truth[key]) { console.log("  ✘ " + f + " 写「" + key + " " + n + " 条」，台账是 " + truth[key]); bad++; fail++; }
+      }
+    }
+  }
+  console.log("  台账真值：" + JSON.stringify(truth));
+  console.log(bad ? "  共比对 " + seen + " 处，错 " + bad + " 处" : "  ✔ 共比对 " + seen + " 处，全部一致");
+}
+
 // ---------- 统计 ----------
 const dirs = {}, grades = {};
 reg.claims.forEach((c) => { dirs[c.direction] = (dirs[c.direction] || 0) + 1; grades[c.grade] = (grades[c.grade] || 0) + 1; });
