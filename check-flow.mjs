@@ -45,7 +45,7 @@ for (const c of reg.claims) {
   if (!ok) bad(c.id + " [" + c.direction + "/" + c.grade + "] " + c.stmt.slice(0, 34) + "  ← 论文里找不到锚点「" + c.paper + "」");
   else {
     let note = "";
-    if (needFalsify && !c.falsify) note = "  ← 回溯类却无推翻条件";
+    if (needFalsify && !c.falsify) { note = "  ← 回溯类却无推翻条件"; warn++; }   // 原来只打印不计数，汇总行永远看不到它
     console.log("  OK " + c.id + " [" + c.direction + "/" + c.grade + "] " + c.stmt.slice(0, 34) + note);
   }
 }
@@ -202,6 +202,29 @@ if (has(MAIN)) {
     for (const q of miss) { console.log("    ⚠ " + q.slice(0, 46)); soft(q.slice(0, 30)); }
   } else console.log("  ✔ 无未复核的引文缺口");
 }
+
+// ---------- 8. 表格完整性 ----------
+// 来历：回溯三那张「变量位时间表」曾被正文截成两段，第二段没有表头分隔行，
+// 转网页时表头行被当成正文、第二行被当成表头分隔行而**静默吞掉**。
+console.log("\n=== 表格完整性 ===");
+let tblN = 0, tblBad = 0;
+for (const f of [...PAPERS, ...LECTURES]) {
+  if (!has(f)) continue;
+  const lines = rd(f).split(/\r?\n/);
+  let i = 0;
+  while (i < lines.length) {
+    if (/^\|/.test(lines[i])) {
+      const start = i, buf = [];
+      while (i < lines.length && /^\|/.test(lines[i])) { buf.push(lines[i]); i++; }
+      tblN++;
+      const cells = (r) => r.replace(/^\||\|$/g, "").split("|").length;
+      const widths = [...new Set(buf.map(cells))];
+      if (widths.length > 1) { console.log("  ✘ " + f + ":" + (start + 1) + " 表格列数不一致：" + widths.join(" vs ")); tblBad++; fail++; }
+      if (!/^\|[\s:\-|]+\|$/.test(buf[1] || "")) { console.log("  ✘ " + f + ":" + (start + 1) + " 表格缺少表头分隔行（第 2、3 行会被吞掉）"); tblBad++; fail++; }
+    } else i++;
+  }
+}
+console.log(tblBad ? "  共 " + tblN + " 张表，" + tblBad + " 张有问题" : "  ✔ " + tblN + " 张表全部完整（列数一致 + 有表头分隔行）");
 
 // ---------- 统计 ----------
 const dirs = {}, grades = {};
