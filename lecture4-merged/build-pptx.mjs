@@ -21,7 +21,9 @@ pptx.title = "世界式与大一统（内部研究纪要 第 49 号 · 合订本
 pptx.subject = "《世界式与大一统》合订本超长课件";
 
 const files = (await fsp.readdir(join(HERE, "png")))
-  .filter((f) => /^page-\d+\.png$/.test(f)).sort();
+  .filter((f) => /^page-\d+\.png$/.test(f))
+  // 必须按数值排！默认 .sort() 是字典序：page-100 会排到 page-11 前面，导致整本课件页序错乱
+  .sort((x, y) => parseInt(x.match(/\d+/)[0], 10) - parseInt(y.match(/\d+/)[0], 10));
 let missing = 0;
 for (const f of files) {
   const n = parseInt(f.match(/(\d+)/)[1], 10);
