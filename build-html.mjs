@@ -7,9 +7,13 @@ const OUT = SRC.replace(/\.md$/, ".html");
 let md = await fsp.readFile(join(HERE, SRC), "utf8");
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+// 行内标记：**加粗**、*斜体*，以及 \* 转义（原文用 W\* 表示带星号的不动点，
+// 转义符必须先藏起来，否则「D\* = 0 改成 D\* = 5」这种一行两个星号会被当成斜体）
 const inl = (s) => esc(s)
+  .replace(/\\\*/g, "\u0001")
   .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-  .replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, "<em>$1</em>");
+  .replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, "<em>$1</em>")
+  .replace(/\u0001/g, "*");
 
 const lines = md.split(/\r?\n/);
 const out = [];
@@ -95,6 +99,8 @@ const css = [
   ".miss{color:#A63A50}",
   "@media print{body{background:#fff}.wrap{box-shadow:none;max-width:none}h2{page-break-after:avoid}figure{page-break-inside:avoid}}",
 ].join("\n");
-const html = "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<title>世界式：原理、推理与应用</title>\n<style>\n" + css + "\n</style>\n</head>\n<body>\n<div class=\"wrap\">\n" + out.join("\n") + "\n</div>\n</body>\n</html>\n";
+// 标题取 md 的一级标题，取不到才退回默认值（原先是写死的「世界式：原理、推理与应用」）
+const h1 = (md.match(/^#\s+(.+)$/m) || [])[1] || "世界式：原理、推理与应用";
+const html = "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<title>" + esc(h1) + "</title>\n<style>\n" + css + "\n</style>\n</head>\n<body>\n<div class=\"wrap\">\n" + out.join("\n") + "\n</div>\n</body>\n</html>\n";
 await fsp.writeFile(join(HERE, OUT), html, "utf8");
 console.log(SRC + " → " + OUT + " 生成完毕: " + Math.round(html.length / 1024) + " KB");
