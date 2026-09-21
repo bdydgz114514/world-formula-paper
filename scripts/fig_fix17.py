@@ -24,7 +24,7 @@ ax.annotate("糊了\n只剩合并、没有新差别注入\nD 一路归零 → �
 ax.axhspan(0, 6, color=RED, alpha=0.08)
 ax.text(0.2, 2.0, "D ≈ 0：一团无法再分辨的东西——原始胎海在锅里的形态", fontsize=9.4, color=RED)
 ax.set_xlabel("加热时间 t", fontsize=11.5); ax.set_ylabel("可分辨的感官要素数 D", fontsize=11.5)
-ax.set_title("图 17　甜甜花酿鸡的 D(t) 轨迹：火候就是曲线最高那一点", fontsize=13, color=NAVY, pad=12)
+ax.set_title("图 16　甜甜花酿鸡的 D(t) 轨迹：火候就是曲线最高那一点", fontsize=13, color=NAVY, pad=12)
 ax.set_ylim(-2.5, 82); ax.set_xlim(-0.3, 18.2)
 ax.grid(alpha=0.22); ax.set_axisbelow(True)
 fig.savefig(os.path.join(OUT, "figures", "fig16-cooking-curve.png"), dpi=190, bbox_inches="tight", facecolor="white")

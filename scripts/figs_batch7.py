@@ -36,7 +36,7 @@ ax.text(-3000, -1.86, "此后间隔依次为 219 / 84 / 32 / 12 / 4.7 …年，�
         ha="center", fontsize=10, color=RED)
 ax.text(340, 1.18, "间隔每次 × 1/φ² ≈ 0.382\n灾难越来越密", ha="center", fontsize=10.2, color=RED)
 ax.set_xlim(-6600, 760); ax.set_ylim(-2.05, 1.70); ax.axis("off")
-ax.set_title("图 23　世界式给出的灾难级联：实心点为已知，空心点为推算", fontsize=13, color=NAVY, pad=10)
+ax.set_title("图 22　世界式给出的灾难级联：实心点为已知，空心点为推算", fontsize=13, color=NAVY, pad=10)
 fig.savefig(os.path.join(OUT, "figures", "fig22-cascade.png"), dpi=190, bbox_inches="tight", facecolor="white")
 plt.close(fig); print("wrote fig23; 预测点:", fut)
 
@@ -58,6 +58,6 @@ for (title, ivs, ax, col) in [("假设甲：葬火之战 = 6000 年前", [4000, 
     ax.text(0.5, 0.79, "公式要求 0.382  →  " + ("吻合" if ok else "差得太远"),
             transform=ax.transAxes, ha="center", fontsize=12, color=("#1B6B62" if ok else RED), fontweight="bold")
     ax.grid(axis="y", alpha=0.2); ax.set_axisbelow(True)
-fig.suptitle("图 24　用世界式裁决年代争议：公式只接受「葬火之战在 6000 年前」", fontsize=13, color=NAVY, y=1.02)
+fig.suptitle("图 23　用世界式裁决年代争议：公式只接受「葬火之战在 6000 年前」", fontsize=13, color=NAVY, y=1.02)
 fig.savefig(os.path.join(OUT, "figures", "fig23-adjudication.png"), dpi=190, bbox_inches="tight", facecolor="white")
 plt.close(fig); print("wrote fig24")

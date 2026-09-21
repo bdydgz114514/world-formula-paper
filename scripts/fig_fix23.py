@@ -45,7 +45,7 @@ for i, x in enumerate(fut):
 ax2.annotate("", xy=(427, -0.60), xytext=(0, -0.60), arrowprops=dict(arrowstyle="<->", color=NAVY, lw=1.8))
 ax2.text(213, -0.72, "从今往后 427 年 = 剩余全部时间（含终末）", ha="center", va="top", fontsize=10, color=NAVY)
 ax2.set_xlim(-30, 470); ax2.set_ylim(-1.15, 1.30); ax2.axis("off")
-ax2.set_title("图 23b　放大未来 450 年：灾难的级联与汇聚点", fontsize=11.8, color=NAVY, pad=6, loc="left")
+ax2.set_title("图 22b　放大未来 450 年：灾难的级联与汇聚点", fontsize=11.8, color=NAVY, pad=6, loc="left")
 fig.tight_layout()
 fig.savefig(os.path.join(OUT, "figures", "fig22-cascade.png"), dpi=190, bbox_inches="tight", facecolor="white")
 plt.close(fig); print("wrote fig23 (双面板)", fut)

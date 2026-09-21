@@ -30,7 +30,7 @@ ax.annotate("", xy=(17.2, 14.6), xytext=(13.6, 14.6), arrowprops=dict(arrowstyle
 ax.text(15.4, 15.1, "骗骗花的规格更高", ha="center", fontsize=10.5, color="#7A5C00", fontweight="bold")
 ax.set_xlabel("生长倍率", fontsize=12)
 ax.set_ylabel("植株能维持的差别度", fontsize=12)
-ax.set_title("图 27　「规格」：每一株植物都有一条自己的界限", fontsize=13.5, color=NAVY, pad=12)
+ax.set_title("图 26　「规格」：每一株植物都有一条自己的界限", fontsize=13.5, color=NAVY, pad=12)
 ax.set_xlim(0.5, 19.5); ax.set_ylim(-2.6, 17.5)
 ax.set_xticks([1,4,8,12,16,19])
 ax.legend(fontsize=10, loc="lower left", framealpha=0.95)

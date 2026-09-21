@@ -32,7 +32,7 @@ ax.annotate("糊了\n继续合并没有新差别注入\nD 一路归零 → 终�
 ax.axhspan(0, 8, color=RED, alpha=0.07)
 ax.text(0.15, 3.2, "D ≈ 0：一团无法再分辨的东西（原始胎海在锅里的形态）", fontsize=9.2, color=RED)
 ax.set_xlabel("加热时间 t", fontsize=11); ax.set_ylabel("可分辨的感官要素数 D", fontsize=11)
-ax.set_title("图 17　甜甜花酿鸡的 D(t) 轨迹：火候就是曲线最高那一点", fontsize=12.8, color=NAVY, pad=12)
+ax.set_title("图 16　甜甜花酿鸡的 D(t) 轨迹：火候就是曲线最高那一点", fontsize=12.8, color=NAVY, pad=12)
 ax.set_ylim(-3, 82); ax.set_xlim(-0.2, 10)
 ax.grid(alpha=0.22); ax.set_axisbelow(True)
 save(fig, "fig16-cooking-curve.png")
@@ -43,7 +43,7 @@ fig, ax = plt.subplots(figsize=(9.6, 7.8)); ax.set_xlim(-5.6, 5.6); ax.set_ylim(
 Q = [(-2.5, 2.5, "记忆", "禽肉", "熟悉的做法\n——它一直都是这样做的", BLUE),
      ( 2.5, 2.5, "灵魂", "禽肉", "本质\n——提供这道菜的实体", PURPLE),
      (-2.5,-2.5, "愿望", "甜甜花", "许诺\n——入口后的那点回甘", GOLD),
-     ( 2.5,-2.5, "表象", "甜甜花", "外观\n——颜色、香气、甜", ORANGE)]
+     ( 2.5,-2.5, "人格", "甜甜花", "外观\n——颜色、香气、甜", ORANGE)]
 for x, y, q, who, why, col in Q:
     ax.add_patch(FancyBboxPatch((x-2.28, y-2.28), 4.56, 4.56, boxstyle="round,pad=0.08,rounding_size=0.22",
                  fc=col, ec="white", lw=3, alpha=0.90))
@@ -53,9 +53,9 @@ for x, y, q, who, why, col in Q:
     ax.text(x, y-0.72, why, ha="center", va="center", fontsize=9.4, color="white")
 ax.annotate("", xy=(5.15, 0), xytext=(-5.15, 0), arrowprops=dict(arrowstyle="-|>", color=NAVY, lw=1.8))
 ax.annotate("", xy=(0, 5.15), xytext=(0, -5.15), arrowprops=dict(arrowstyle="-|>", color=NAVY, lw=1.8))
-ax.text(4.75, 0.30, "本质", fontsize=10, color=NAVY); ax.text(-4.75, 0.30, "表象", fontsize=10, color=NAVY)
+ax.text(4.75, 0.30, "本征", fontsize=10, color=NAVY); ax.text(-4.75, 0.30, "表象", fontsize=10, color=NAVY)
 ax.text(0.18, 4.75, "过去", fontsize=10, color=NAVY, rotation=90, va="top")
 ax.text(0.18, -4.75, "未来", fontsize=10, color=NAVY, rotation=90, va="bottom")
-ax.text(0, -5.28, "图 18　两味原料填满四个象限：禽肉占灵魂与记忆，甜甜花占表象与愿望", ha="center", fontsize=11, color=GREY)
+ax.text(0, -5.28, "图 17　两味原料填满四个象限：禽肉占灵魂与记忆，甜甜花占人格与愿望", ha="center", fontsize=11, color=GREY)
 save(fig, "fig17-recipe-quadrants.png")
 print("补论插图完成")

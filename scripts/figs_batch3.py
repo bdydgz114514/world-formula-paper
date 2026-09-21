@@ -26,10 +26,10 @@ for y, h, title, col, desc in layers:
     ax.text(1.0, y+0.72, desc, ha="left", va="center", fontsize=10.2, color=NAVY)
 ax.add_patch(FancyArrowPatch((11.05, 1.4), (11.05, 7.2), arrowstyle="-|>", lw=2.0, color=GREY, mutation_scale=16))
 ax.text(11.38, 4.3, "抽象层级升高", rotation=90, va="center", ha="center", fontsize=9.5, color=GREY)
-ax.text(6.0, 0.05, "图 7　同一个方程在三个抽象层级上的投影", ha="center", fontsize=10.5, color=GREY)
+ax.text(6.0, 0.05, "图 8　同一个方程在三个抽象层级上的投影", ha="center", fontsize=10.5, color=GREY)
 save(fig, "fig08-threelayers.png")
 
-# ---------- 图12 雷内方案复盘 ----------
+# ---------- 图 30 雷内方案复盘 ----------
 fig, ax = plt.subplots(figsize=(12.6, 6.6)); ax.set_xlim(0, 12.6); ax.set_ylim(0, 6.8); ax.axis("off")
 ax.text(6.3, 6.35, "雷内的每一个「救世」动作，在方程里的实际效果", ha="center", fontsize=13, color=NAVY, fontweight="bold")
 rows = [
@@ -73,7 +73,7 @@ for i, (num, t, d, col) in enumerate(steps):
         ax.add_patch(FancyArrowPatch((x+1.90, 4.15), (x+2.09, 4.15), arrowstyle="-|>", lw=2.4, color=NAVY, mutation_scale=17))
 ax.add_patch(FancyBboxPatch((1.2, 0.55), 10.6, 1.35, boxstyle="round,pad=0.10,rounding_size=0.2", fc="#F7FAFC", ec=TEAL, lw=1.6))
 ax.text(6.5, 1.22, "口诀：先划边界 → 再定算子 → 后查内源。三步定完，终末就已经写好了。", ha="center", fontsize=11.5, color=NAVY)
-ax.text(6.5, 0.22, "图 13　世界式使用教程：六步流程", ha="center", fontsize=10.5, color=GREY)
+ax.text(6.5, 0.22, "图 14　世界式使用教程：六步流程", ha="center", fontsize=10.5, color=GREY)
 save(fig, "fig14-tutorial.png")
 
 # ---------- 图14 判别树 ----------
@@ -97,7 +97,7 @@ edge(9.0, 5.1, 8.2, 4.3, "是", 8.5, 4.78, RED); edge(10.4, 5.1, 11.0, 4.3, "否
 ax.add_patch(FancyBboxPatch((2.6, 1.25), 7.4, 1.55, boxstyle="round,pad=0.12,rounding_size=0.2", fc="#FFF6F6", ec=RED, lw=1.8))
 ax.text(6.3, 2.35, "判据：不问动机，只问方向。", ha="center", fontsize=11.6, color=RED, fontweight="bold")
 ax.text(6.3, 1.68, "一个方案只要在数学上做「密合」，无论它自称救世还是治愈，\n都会让 D 下降得更快——雷内的格式塔就是最典型的例子。", ha="center", fontsize=9.8, color=NAVY)
-ax.text(6.3, 0.5, "图 14　判别树：这个方案在加速终末吗？", ha="center", fontsize=10.5, color=GREY)
+ax.text(6.3, 0.5, "图 15　判别树：这个方案在加速终末吗？", ha="center", fontsize=10.5, color=GREY)
 save(fig, "fig15-decisiontree.png")
 
 # ---------- 图15 案例时间线 ----------
@@ -117,7 +117,7 @@ for x, side, t, d, col in cases:
     ty = side*1.05 + (0.62 if side > 0 else 0.62)
     ax.text(x, ty+0.24, t, ha="center", va="center", fontsize=9.8, color="white", fontweight="bold")
     ax.text(x, ty-0.28, d, ha="center", va="center", fontsize=8.2, color="white")
-ax.text(6.0, -2.25, "图 15　四个推理案例：每个都只用「差别度 + 算子 + 内源」三件事就推完了", ha="center", fontsize=10.5, color=GREY)
+ax.text(6.0, -2.25, "图 12　四个推理案例：每个都只用「差别度 + 算子 + 内源」三件事就推完了", ha="center", fontsize=10.5, color=GREY)
 save(fig, "fig12-cases.png")
 
 # ---------- 图16 概念关系图 ----------
@@ -148,6 +148,6 @@ link("世界式", "原始胎海\nD = 0", "唯一吸引子", 0.0, "#4B3F72")
 link("差别度 D", "四象限", "分布在", 0.10, PURPLE)
 link("降临者", "世界式", "改写初始项", -0.18, "#7B4B94")
 link("法图纳", "降临者", "同为外源", 0.0, GREY)
-ax.text(6.0, 0.18, "图 16　概念关系图：世界式在整套术语里的位置", ha="center", fontsize=10.5, color=GREY)
+ax.text(6.0, 0.18, "图 11　概念关系图：世界式在整套术语里的位置", ha="center", fontsize=10.5, color=GREY)
 save(fig, "fig11-conceptmap.png")
 print("第3批完成")

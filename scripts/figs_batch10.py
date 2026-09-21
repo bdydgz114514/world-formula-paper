@@ -12,7 +12,7 @@ NAVY, TEAL, GOLD, RED, BLUE, GREY, PURPLE, ORANGE = "#16324F", "#2A9D8F", "#C9A2
 def save(fig, n):
     fig.savefig(os.path.join(OUT, "figures", n), dpi=190, bbox_inches="tight", facecolor="white"); plt.close(fig); print("wrote", n)
 
-# ---------- 图29 三档操作 ----------
+# ---------- 图 28 三档操作 ----------
 fig, ax = plt.subplots(figsize=(12.6, 6.0))
 ax.set_xlim(0, 12.6); ax.set_ylim(0, 6.4); ax.axis("off")
 rows = [
@@ -38,7 +38,7 @@ ax.text(6.3, 0.84, "四象限里「灵魂」与「人格」可分开处理 —�
         ha="center", va="center", fontsize=11.4, color="#6A4E00")
 save(fig, "fig28-three-operations.png")
 
-# ---------- 图30 变量位时间表 ----------
+# ---------- 图 29 变量位时间表 ----------
 fig, ax = plt.subplots(figsize=(13.0, 5.4))
 ax.set_xlim(0, 13.0); ax.set_ylim(0, 5.8); ax.axis("off")
 data = [

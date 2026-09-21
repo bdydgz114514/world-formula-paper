@@ -31,7 +31,7 @@ ax.text(27, 4.72, "三条约束同时逼近的区间\n（本次推算的答案�
 ax.set_yticks(y); ax.set_yticklabels(names, fontsize=11)
 ax.set_xlabel("该约束允许的最大人口（千人）", fontsize=11.5)
 ax.set_xlim(0, 640); ax.set_ylim(-0.7, 5.15)
-ax.set_title("图 21　枫丹廷的五条人口约束：白线是估算区间，柱体是中心估计", fontsize=12.8, color=NAVY, pad=12)
+ax.set_title("图 20　枫丹廷的五条人口约束：白线是估算区间，柱体是中心估计", fontsize=12.8, color=NAVY, pad=12)
 ax.grid(axis="x", alpha=0.2); ax.set_axisbelow(True)
 save(fig, "fig20-population-limits.png")
 
@@ -63,6 +63,6 @@ ax.text(-2.55, 3.55, "城市得以运转", fontsize=9.2, color=GREY, ha="center"
 ax.add_patch(Circle((0, 0), 1.45, fc="#FFF6F6", ec=RED, lw=2.2, zorder=3))
 ax.text(0, 0.22, "断点", ha="center", va="center", fontsize=15, color=RED, fontweight="bold", zorder=4)
 ax.text(0, -0.55, "τ > 市民容忍度\n→ 正反馈转为负反馈", ha="center", va="center", fontsize=8.6, color=RED, zorder=4)
-ax.text(0, -5.18, "图 22　律偿混能的反馈环：人口养信仰，信仰供能量；但延迟一旦超过容忍度，环就反转", ha="center", fontsize=10.6, color=GREY)
+ax.text(0, -5.18, "图 21　律偿混能的反馈环：人口养信仰，信仰供能量；但延迟一旦超过容忍度，环就反转", ha="center", fontsize=10.6, color=GREY)
 save(fig, "fig21-feedback-loop.png")
 print("补论三插图完成")

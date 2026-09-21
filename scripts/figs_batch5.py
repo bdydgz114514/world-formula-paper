@@ -12,7 +12,7 @@ NAVY, TEAL, GOLD, RED, BLUE, GREY, PURPLE, ORANGE = "#16324F", "#2A9D8F", "#C9A2
 def save(fig, n):
     fig.savefig(os.path.join(OUT, "figures", n), dpi=190, bbox_inches="tight", facecolor="white"); plt.close(fig); print("wrote", n)
 
-# ---------- 图19：现实 vs 提瓦特 的泡泡糖原料来源 ----------
+# ---------- 图 18：现实 vs 提瓦特 的泡泡糖原料来源 ----------
 fig, ax = plt.subplots(figsize=(12.6, 6.6)); ax.set_xlim(0, 12.6); ax.set_ylim(0, 6.8); ax.axis("off")
 rows = [
     ("胶基（弹性网络）", "石油 → 聚异丁烯", "薄荷叶的果胶（植物多糖）", RED),
@@ -69,6 +69,6 @@ for ax in axes:
     ax.set_xlabel("形变（受力程度）", fontsize=10.5); ax.set_ylabel("差别度 D", fontsize=10.5)
     ax.grid(alpha=0.2); ax.set_axisbelow(True)
 axes[1].legend(fontsize=9.5, loc="lower right")
-fig.suptitle("图 20　弹性为什么必须建立在「不顾同化」的力上", fontsize=12.8, color=NAVY, y=1.00)
+fig.suptitle("图 19　弹性为什么必须建立在「不顾同化」的力上", fontsize=12.8, color=NAVY, y=1.00)
 save(fig, "fig19-elasticity-vs-assimilation.png")
 print("补论二插图完成")
