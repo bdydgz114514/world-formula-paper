@@ -68,7 +68,11 @@ while (i < lines.length) {
     while (i < lines.length && /^\s*\d+\.\s+/.test(lines[i])) { buf.push(lines[i].replace(/^\s*\d+\.\s+/, "")); i++; }
     out.push("<ol>" + buf.map(b => "<li>" + inl(b) + "</li>").join("") + "</ol>"); continue;
   }
-  if (/^\*图/.test(L) || /^\*.+\*$/.test(L)) { out.push('<p class="cap">' + inl(L.replace(/^\*|\*$/g, "")) + "</p>"); i++; continue; }
+  // 图注判定：必须是 *图 N …* 这种整行斜体，且**行内不能出现双星号**。
+  // 来历：原判据是「以 * 开头、以 * 结尾」，于是所有「**加粗开头、**加粗结尾」的正文段落
+  // 都被误判成图注——被渲染成居中小字，且首尾各吃掉一个 *，导致整段包在 <em> 里。
+  // 合订本里误判 1304 处、讲稿里 1280 处。
+  if (/^\*图/.test(L) || (/^\*(?!\*)/.test(L) && /(?<!\*)\*$/.test(L) && !L.includes("**"))) { out.push('<p class="cap">' + inl(L.replace(/^\*|\*$/g, "")) + "</p>"); i++; continue; }
   out.push("<p>" + inl(L) + "</p>"); i++;
 }
 

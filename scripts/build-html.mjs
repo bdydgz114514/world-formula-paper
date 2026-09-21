@@ -2,12 +2,18 @@ import { promises as fsp } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 const HERE = dirname(fileURLToPath(import.meta.url));
-let md = await fsp.readFile(join(HERE, "世界式论文.md"), "utf8");
+const SRC = process.argv[2] || "世界式论文.md";
+const OUT = SRC.replace(/\.md$/, ".html");
+let md = await fsp.readFile(join(HERE, SRC), "utf8");
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+// 行内标记：**加粗**、*斜体*，以及 \* 转义（原文用 W\* 表示带星号的不动点，
+// 转义符必须先藏起来，否则「D\* = 0 改成 D\* = 5」这种一行两个星号会被当成斜体）
 const inl = (s) => esc(s)
+  .replace(/\\\*/g, "\u0001")
   .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-  .replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, "<em>$1</em>");
+  .replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, "<em>$1</em>")
+  .replace(/\u0001/g, "*");
 
 const lines = md.split(/\r?\n/);
 const out = [];
@@ -62,7 +68,11 @@ while (i < lines.length) {
     while (i < lines.length && /^\s*\d+\.\s+/.test(lines[i])) { buf.push(lines[i].replace(/^\s*\d+\.\s+/, "")); i++; }
     out.push("<ol>" + buf.map(b => "<li>" + inl(b) + "</li>").join("") + "</ol>"); continue;
   }
-  if (/^\*图/.test(L) || /^\*.+\*$/.test(L)) { out.push('<p class="cap">' + inl(L.replace(/^\*|\*$/g, "")) + "</p>"); i++; continue; }
+  // 图注判定：必须是 *图 N …* 这种整行斜体，且**行内不能出现双星号**。
+  // 来历：原判据是「以 * 开头、以 * 结尾」，于是所有「**加粗开头、**加粗结尾」的正文段落
+  // 都被误判成图注——被渲染成居中小字，且首尾各吃掉一个 *，导致整段包在 <em> 里。
+  // 合订本里误判 1304 处、讲稿里 1280 处。
+  if (/^\*图/.test(L) || (/^\*(?!\*)/.test(L) && /(?<!\*)\*$/.test(L) && !L.includes("**"))) { out.push('<p class="cap">' + inl(L.replace(/^\*|\*$/g, "")) + "</p>"); i++; continue; }
   out.push("<p>" + inl(L) + "</p>"); i++;
 }
 
@@ -93,6 +103,8 @@ const css = [
   ".miss{color:#A63A50}",
   "@media print{body{background:#fff}.wrap{box-shadow:none;max-width:none}h2{page-break-after:avoid}figure{page-break-inside:avoid}}",
 ].join("\n");
-const html = "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<title>世界式：原理、推理与应用</title>\n<style>\n" + css + "\n</style>\n</head>\n<body>\n<div class=\"wrap\">\n" + out.join("\n") + "\n</div>\n</body>\n</html>\n";
-await fsp.writeFile(join(HERE, "世界式论文.html"), html, "utf8");
-console.log("HTML 生成完毕: " + Math.round(html.length / 1024) + " KB");
+// 标题取 md 的一级标题，取不到才退回默认值（原先是写死的「世界式：原理、推理与应用」）
+const h1 = (md.match(/^#\s+(.+)$/m) || [])[1] || "世界式：原理、推理与应用";
+const html = "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<title>" + esc(h1) + "</title>\n<style>\n" + css + "\n</style>\n</head>\n<body>\n<div class=\"wrap\">\n" + out.join("\n") + "\n</div>\n</body>\n</html>\n";
+await fsp.writeFile(join(HERE, OUT), html, "utf8");
+console.log(SRC + " → " + OUT + " 生成完毕: " + Math.round(html.length / 1024) + " KB");
