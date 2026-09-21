@@ -288,6 +288,38 @@ console.log("\n=== 统计数字一致性（以 主张台账.json 为准） ===")
       }
     }
   }
+  // 分卷量核算：来历 —— 6.7 那张「两张账并排」曾把第一卷写成 甲10/乙9、推翻条件 18（真值 甲9/乙10、19），
+  // 讲稿与课件各自抄了一遍，三处一起错，而当时的闸九只比对总数，看不见分卷。
+  {
+    const byVol = {};
+    for (const c of led.claims) {
+      const v = /^第二卷/.test(c.paper) ? 2 : 1;
+      byVol[v] = byVol[v] || { n: 0, f: 0, g: {} };
+      byVol[v].n++; if (c.falsify) byVol[v].f++; byVol[v].g[c.grade] = (byVol[v].g[c.grade] || 0) + 1;
+    }
+    const v1 = true;
+    const want = {
+      "写了推翻条件": [byVol[1].f, byVol[2].f],
+      "未写推翻条件": [byVol[1].n - byVol[1].f, byVol[2].n - byVol[2].f],
+      "甲级": [byVol[1].g["甲级"] || 0, byVol[2].g["甲级"] || 0],
+      "乙级": [byVol[1].g["乙级"] || 0, byVol[2].g["乙级"] || 0],
+      "丙级": [byVol[1].g["丙级"] || 0, byVol[2].g["丙级"] || 0],
+      "主张总数": [byVol[1].n, byVol[2].n],
+    };
+    let checked = 0, wrong = 0;
+    for (const f of [MERGED, ...LECTURES]) {
+      if (!has(f)) continue;
+      const txt = rd(f);
+      for (const [key, exp] of Object.entries(want)) {
+        const re = new RegExp("\\|\\s*\\*{0,2}" + key + "\\*{0,2}\\s*\\|\\s*(\\d+)\\s*\\|\\s*(\\d+)\\s*\\|", "g");
+        for (const m of txt.matchAll(re)) {
+          checked++;
+          if (+m[1] !== exp[0] || +m[2] !== exp[1]) { console.log("  ✘ " + f + " 写「" + key + " " + m[1] + " | " + m[2] + "」，台账是 " + exp[0] + " | " + exp[1]); wrong++; fail++; }
+        }
+      }
+    }
+    console.log(wrong ? "  分卷量核算：比对 " + checked + " 处，错 " + wrong + " 处" : "  ✔ 分卷量核算：比对 " + checked + " 处，全部一致（第一卷 " + byVol[1].n + " 条 / 推翻条件 " + byVol[1].f + "；第二卷 " + byVol[2].n + " 条 / 推翻条件 " + byVol[2].f + "）");
+  }
   console.log("  台账真值：" + JSON.stringify(truth));
   console.log(bad ? "  共比对 " + seen + " 处，错 " + bad + " 处" : "  ✔ 共比对 " + seen + " 处，全部一致");
 }

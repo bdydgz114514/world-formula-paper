@@ -29,9 +29,10 @@ const renum = (s) => s.replace(/第\s*(\d+)\s*页/g, (all, d) => (newOf.has(+d) 
 const out = ["# 世界式与大一统·讲稿", "", "### ——合订本（内部研究纪要第 49 号）讲稿", "",
   "### 与课件逐页对应：讲稿第 N 页 = 课件第 N 页，共 164 页", "",
   "这一版讲稿按课件《世界式-大一统-合订本课件》重排：**讲稿第 N 页就是课件第 N 页**，两份材料可以并排翻。", "",
-  "每一页开头那一行是课件上的标题；页内的三级小标题，是重排前每一个小节的原标题（原页码已并入本页）。", ""];
+  "每一页开头那一行是课件上的标题；页内的小标题（`####` 那一行），是重排前每一个小节的原标题（原页码已并入本页）。正文里说「这一节」，指的就是这样一个小节。",
+  "讲稿里「第一部／第二部／第三部」与「第一卷／第二卷／第三卷」是同一件事（论文只用「卷」）。", ""];
 const VOL = new Map([[1, "### 序"], [7, "### 第一部　世界式：一个封闭系统的算术"],
-  [75, "### 第二部　大一统：一个缺失的项"], [119, "### 第三部　接缝：两份材料互相解释"], [163, "### 尾声"]]);
+  [75, "### 第二部　大一统：一个缺失的项"], [119, "### 第三部　接缝：两份材料互相解释"], [160, "### 尾声"]]);
 for (let j = 0; j < heads.length; j++) {
   const n = j + 1;
   if (VOL.has(n)) out.push("", VOL.get(n), "");
@@ -43,6 +44,8 @@ for (let j = 0; j < heads.length; j++) {
 }
 let text = out.join("\n").replace(/\n{4,}/g, "\n\n\n").trimEnd() + "\n";
 for (const [a, b] of MAP.fixes) { if (!text.includes(a)) throw new Error("待改写的句子找不到：" + a); text = text.replace(a, b); }
+// globalFixes：全局替换（例如合并后同页内的旧「页」改称「节」）
+for (const [a, b] of MAP.globalFixes || []) text = text.split(a).join(b);
 await fs.writeFile(path.join(ROOT, "讲稿-合订本.md"), text, "utf8");
 const nPage = (text.match(/^## 第 \d+ 页/gm) || []).length;
 console.log(`讲稿-合订本.md 已重建：${nPage} 页，${(text.match(/[\u4e00-\u9fa5]/g) || []).length} 汉字`);
